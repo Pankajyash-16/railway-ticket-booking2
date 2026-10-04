@@ -426,30 +426,179 @@ input:hover,select:hover{border-color:#b9c4ff}
 @keyframes cf{to{transform:translate3d(var(--dx),108vh,0) rotate(720deg)}}
 @media(prefers-reduced-motion:reduce){.cloud,.cf{animation:none}.cloud{display:none}}
 @media(max-width:820px){.hero{border-radius:0 0 30px 30px}.sky{bottom:70px;height:110px}.tk2l:after{font-size:5rem}}
+/* v11 */
+.backbar{height:0;background:none;overflow:visible;position:static}
+.backbar .wrap{padding:0}
+.back{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:55;background:rgba(11,18,56,.92);backdrop-filter:blur(8px);border:1px solid #ffffff44;color:#fff;border-radius:99px;padding:10px 18px;font-weight:800;font-size:.85rem;box-shadow:0 10px 26px #0b123866}
+.back:hover{background:var(--yellow);color:var(--ink)}
+.hero{padding-top:46px}
+nav{gap:1px}
+nav a{font-size:clamp(.6rem,2.7vw,.98rem);padding:6px clamp(4px,1.6vw,18px)}
+small.hint,.hint{display:block;color:var(--mute);font-size:.76rem;margin-top:5px;font-weight:600}
+/* tatkal vs general ticket */
+.tk2{position:relative}
+.qt{display:inline-block;margin-top:6px;background:#ffffff22;border:1px solid #ffffff55;color:#fff;font-weight:800;font-size:.68rem;letter-spacing:.12em;padding:2px 10px;border-radius:99px}
+.tkt{border-color:#ffd2ad;box-shadow:0 22px 50px #d6350c33}
+.tkt .tk2h{background:linear-gradient(120deg,#6b1200,#d6350c 55%,#ff8a1f)}
+.tkt .qt{background:#ffd75e;color:#6b1200;border-color:#ffd75e}
+.tkt .rtx strong,.tkt .price,.tkt .ap{color:#d6350c}
+.tkt .mid i{border-top-color:#ff8a1f}
+.tkt .tk2r{background:linear-gradient(160deg,#fff1e2,#fff 55%,#ffe3c2)}
+.tkt .tk2f{background:#fff1e2}
+.tkt .tk2l:before{content:"TATKAL";position:absolute;right:22px;top:44%;transform:translateY(-50%) rotate(-10deg);font:800 4.4rem var(--display);color:#ff8a1f;opacity:.07;pointer-events:none}
+/* cancelled */
+.tk2.cxl{filter:grayscale(.9);opacity:.82}
+.tk2.cxl .tk2l:before{content:"CANCELLED";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-14deg);font:800 4rem var(--display);color:#c0291d;opacity:.16;pointer-events:none;white-space:nowrap;right:auto}
+.tk2.cxl .stamp{color:#c0291d;border-color:#c0291d;background:#fdecea}
+.cxbtn{background:#fff;border:2px solid #f3b6b0;color:#c0291d;border-radius:12px;padding:8px 12px;font-weight:800;font-size:.78rem;cursor:pointer;transition:.15s}
+.cxbtn:hover{background:#c0291d;color:#fff;border-color:#c0291d}
+.cxd{background:#fdecea;border:2px solid #f3b6b0;color:#c0291d;border-radius:12px;padding:6px 10px;font-weight:800;font-size:.85rem;text-align:center}
+.cxd small{display:block;font-weight:600;color:#7a1d14;font-size:.68rem}
+.okb.cxb{background:linear-gradient(120deg,#6b1f1f,#c0291d);box-shadow:0 14px 32px #c0291d45}.okb.cxb .tick{color:#c0291d}
+.btn.red{background:linear-gradient(135deg,#ff6a5c,#c0291d);color:#fff;box-shadow:0 6px 18px #c0291d45}
+/* modal */
+.mdl{position:fixed;inset:0;background:#0b123899;backdrop-filter:blur(4px);z-index:100;display:grid;place-items:center;padding:16px;animation:fade .2s both}
+.mbox{background:#fff;border-radius:24px;padding:26px;max-width:480px;width:100%;box-shadow:0 30px 80px #0008;max-height:90vh;overflow:auto}
+.mbox h3{font-size:1.4rem;margin-bottom:6px}.mbox p{color:var(--mute);margin-bottom:12px}.mbox .sm{font-size:.82rem}
+.cxt{display:grid;gap:8px;margin:10px 0;max-height:34vh;overflow:auto}
+.cxr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;background:#f5f7ff;border:1px solid #e1e6ff;border-radius:14px;padding:10px 14px}
+.cxr b{grid-column:1}.cxr em{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-weight:800;color:#0c7a55;font-size:1.05rem}.cxr span{font-size:.78rem;color:var(--mute)}
+.note2{font-size:.82rem;background:#fff8e6;border:1px solid #f3dca0;border-radius:12px;padding:8px 12px;color:#7a5a00!important}
+.cxs{display:flex;justify-content:space-between;align-items:center;margin:12px 0;font-weight:800}.cxs b{font:800 1.6rem var(--display);color:#0c7a55}
+.mb{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:8px}
+.cxdone{width:64px;height:64px;border-radius:50%;background:#e8f8f1;color:#0c7a55;display:grid;place-items:center;font:800 2rem var(--display);margin-bottom:10px}
+/* cancel page */
+.cxwrap{display:grid;gap:22px;margin:-34px auto 90px;position:relative}
+.cprow{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}.cprow input{flex:1;min-width:200px;letter-spacing:.12em;font-weight:700}
+.bksum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;background:#fff;border:1px solid #e1e6ff;border-radius:20px;padding:18px 22px;box-shadow:0 10px 30px #3b4ef014}
+.bksum b{display:block;font:800 1.05rem var(--display)}
+.rh2{font-size:1.25rem;margin-bottom:12px}
+.rbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
+.rb{text-align:left;background:#fff;border:2px solid #e1e6ff;border-radius:18px;padding:14px 16px;cursor:pointer;display:grid;gap:3px;transition:.2s;color:var(--ink)}
+.rb:hover{border-color:#3b4ef0;transform:translateY(-3px);box-shadow:0 14px 30px #3b4ef022}
+.rb b{font:800 1.05rem var(--display)}.rb span{font-size:.8rem;color:var(--mute)}
+.st{justify-self:start;font-style:normal;font-weight:800;font-size:.7rem;border-radius:99px;padding:2px 10px}
+.st-a{background:#dff5ec;color:#0c7a55}.st-p{background:#fff0c2;color:#8a5a00}.st-c{background:#fde2df;color:#c0291d}
+/* about / help: colourful cards */
+.hc{--ac:#3b4ef0;--ac2:#7c5cff}
+.hc:nth-child(6n+2){--ac:#f59e0b;--ac2:#ffc933}
+.hc:nth-child(6n+3){--ac:#0ea371;--ac2:#34d399}
+.hc:nth-child(6n+4){--ac:#e0457b;--ac2:#ff86ae}
+.hc:nth-child(6n+5){--ac:#0891b2;--ac2:#4fd1ff}
+.hc:nth-child(6n){--ac:#8b5cf6;--ac2:#c084fc}
+.hc:nth-child(n){border-top:5px solid var(--ac);background:linear-gradient(#fff,color-mix(in srgb,var(--ac) 6%,#fff));border-color:color-mix(in srgb,var(--ac) 22%,#e3e8ff);border-top-color:var(--ac)}
+.hc:nth-child(n) .no{background:linear-gradient(135deg,var(--ac2),var(--ac));color:#fff;box-shadow:0 8px 16px color-mix(in srgb,var(--ac) 40%,transparent)}
+.hc:nth-child(n) li:before{background:var(--ac)}
+.hc:nth-child(n) h2{color:color-mix(in srgb,var(--ac) 55%,#0b1238)}
+.hc:hover{box-shadow:0 22px 46px color-mix(in srgb,var(--ac) 28%,transparent)}
+.hc.warn:nth-child(n){--ac:#e08a00;background:#fffaf0}
+.hc.imp:nth-child(n){--ac:#e4392b;--ac2:#ff6a5c;background:#fff4f3;border:2px solid #e4392b;border-top:7px solid #e4392b}
+.hc.imp:nth-child(n) h2{color:#c0291d}
+.prose{border-left:8px solid var(--yellow);background:linear-gradient(120deg,#fff,#f4f1ff)}
+.pagehead h1{text-shadow:0 6px 30px #7c5cff66}
+@media(max-width:820px){.cxr{grid-template-columns:1fr}.cxr em{grid-column:1;grid-row:auto}}
+@media print{.back,.mdl{display:none!important}}
+/* v12 */
+.pnrb{cursor:pointer;transition:transform .15s}.pnrb:hover{transform:scale(1.04)}.pnrb:active{transform:scale(.97)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#0b1238;color:#fff;font-weight:700;padding:10px 18px;border-radius:99px;z-index:120;box-shadow:0 12px 30px #0006;animation:fade .2s both}
+.cprow .btn.ghost2{padding:12px 18px}
+/* v13 */
+.backbar{position:sticky;top:var(--hh,100px);z-index:30;height:0;background:none;overflow:visible}
+.backbar .wrap{position:relative;height:0;padding:0 5vw}
+.back{position:absolute;left:5vw;top:10px;bottom:auto;background:rgba(11,18,56,.92);padding:9px 18px;box-shadow:0 8px 22px #0b123866}
+.hero{padding-top:58px}
+/* Tatkal ticket: ruby + gold (General stays indigo) */
+.tkt{border-color:#ffc9d3;box-shadow:0 22px 50px #a8123c33}
+.tkt .tk2h{background:linear-gradient(120deg,#3a0820,#a8123c 52%,#ff6a4d)}
+.tkt .tk2h:after{background:linear-gradient(90deg,#ffd166,#fff3c4,#ffb703,#fff3c4,#ffd166)}
+.tkt .qt{background:linear-gradient(135deg,#ffe29a,#ffc233);color:#4a0d2e;border-color:#ffd166}
+.tkt .rtx strong,.tkt .price,.tkt .ap{color:#b0123a}
+.tkt .mid i{border-top-color:#ff6a4d}
+.tkt .tk2r{background:linear-gradient(160deg,#fff0f3,#fff 55%,#ffe8cf)}
+.tkt .tk2f{background:#fff0f3}
+.tkt .tk2l:before{color:#ff6a4d}
+.tkt .trn b{color:#4a0d2e}
+a.cxbtn{display:inline-block;text-align:center;text-decoration:none}
+/* download page */
+.dlhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#fff;border:1px solid #e1e6ff;border-radius:20px;padding:14px 20px;box-shadow:0 10px 30px #3b4ef014}
+.dlhead b{color:var(--blue);font-size:1.2rem}
+.bkg{display:grid;gap:16px}
+/* cancel page */
+.cxcard{background:linear-gradient(#fff,#f9faff);border:1px solid #e1e6ff;border-radius:24px;padding:22px;box-shadow:0 14px 36px #3b4ef018;display:grid;gap:14px}
+.cxlist{display:grid;gap:10px}
+.cxrow{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:#f5f7ff;border:2px solid #e1e6ff;border-radius:16px;padding:12px 14px;cursor:pointer;margin:0;font-weight:400;transition:.15s}
+.cxrow:has(input:checked){border-color:#c0291d;background:#fff4f3}
+.cxrow input{width:22px;min-height:0;height:22px;padding:0;accent-color:#c0291d}
+.cxn b{display:block}.cxn small{color:var(--mute);font-size:.78rem}
+.cxrow em{font-style:normal;font-weight:800;color:var(--blue)}
+.cxsum{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:#fff4f3;border:1px solid #f3b6b0;border-radius:16px;padding:12px 16px;margin-top:8px;color:#7a1d14}
+.cxsum em{margin-left:auto;font-style:normal;font-weight:800;color:#c0291d}
+@media print{.backbar{display:none!important}}
 </style><meta name="theme-color" content="#0f1b3d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E"><title>Download Ticket</title></head><body>
-<header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html">Book Ticket</a><a href="download.html" class="on">Download</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div><div class="pagehead"><div class="wrap"><h1>Download Ticket</h1><p>Download your ticket as a PDF</p></div></div>
+<header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html">Book Ticket</a><a href="download.html" class="on">Download</a><a href="cancel.html">Cancel</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div><div class="pagehead"><div class="wrap"><h1>Download Ticket</h1><p>Download your ticket as a PDF</p></div></div>
 <div class="wrap"><div class="dlwrap" id="dlbox"></div></div>
 <footer><b>Railway Ticket Booking Simulation</b>B.Tech First Year Mini Project<br>Designed &amp; Developed by: <em>Pankaj Ahirwar</em></footer><script>
+(()=>{let r=false;try{const n=performance.getEntriesByType("navigation")[0];r=n?n.type==="reload":!!(performance.navigation&&performance.navigation.type===1)}catch(e){}
+if(r){try{sessionStorage.removeItem("rtb_all")}catch(e){}try{localStorage.removeItem("rtb_all");localStorage.removeItem("rtb_last")}catch(e){}try{if(String(window.name).startsWith("RTB1:"))window.name=""}catch(e){}}})();
+ 
 const $=i=>document.getElementById(i);
 const E=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const apm=s=>E(s).replace(/ (AM|PM)$/,' <small class="ap">$1</small>');
 const rs=x=>"₹"+Number(x).toLocaleString("en-IN");
-const bars=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,33)+c.charCodeAt(0))>>>0;let o="";for(let i=0;i<38;i++){h=(Math.imul(h,1664525)+1013904223)>>>0;o+=`<span style="width:${1+(h>>>16)%4}px;margin-right:${1+(h>>>20)%3}px"></span>`}return o};
-const qr=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,31)+c.charCodeAt(0))>>>0;const N=25,m=[];for(let y=0;y<N;y++){m[y]=[];for(let x=0;x<N;x++){h=(Math.imul(h,1664525)+1013904223)>>>0;m[y][x]=(h>>>24)&1}}
- const fp=(ox,oy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const X=ox+x,Y=oy+y;if(X<0||Y<0||X>=N||Y>=N)continue;const e=x>=0&&x<7&&y>=0&&y<7;m[Y][X]=e&&(x==0||y==0||x==6||y==6||(x>=2&&x<=4&&y>=2&&y<=4))?1:0}};fp(0,0);fp(N-7,0);fp(0,N-7);
- let r="";for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(m[y][x])r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;return`<svg class="qr" viewBox="0 0 ${N} ${N}" aria-hidden="true">${r}</svg>`};
-const bannerHTML=X=>{const n=X.pax.length,wl=X.pax.filter(p=>!p.ok).length,t=wl==0?"Ticket Booked Successfully!":wl==n?"Ticket Booked - Waiting List":"Ticket Booked - "+(n-wl)+" Confirmed, "+wl+" Waiting";
- return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==n?"!":"✓"}</div><div class="oi"><b>${t}</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${n} passenger${n>1?"s":""} · ${E(X.q)}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(X.pax.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
-const tkHTML=X=>X.pax.map(p=>`<article class="tk2 ${p.ok?"cnf":"wl"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small></div><div class="pnrb"><small>PNR NUMBER</small><b>${E(X.pnr)}</b></div></div>
+const barA=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,33)+c.charCodeAt(0))>>>0;const o=[];for(let i=0;i<38;i++){h=(Math.imul(h,1664525)+1013904223)>>>0;o.push([1+(h>>>16)%4,1+(h>>>20)%3])}return o};
+const bars=s=>barA(s).map(([w,m])=>`<span style="width:${w}px;margin-right:${m}px"></span>`).join("");
+const qrM=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,31)+c.charCodeAt(0))>>>0;const N=25,m=[];for(let y=0;y<N;y++){m[y]=[];for(let x=0;x<N;x++){h=(Math.imul(h,1664525)+1013904223)>>>0;m[y][x]=(h>>>24)&1}}
+ const fp=(ox,oy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const X=ox+x,Y=oy+y;if(X<0||Y<0||X>=N||Y>=N)continue;const e=x>=0&&x<7&&y>=0&&y<7;m[Y][X]=e&&(x==0||y==0||x==6||y==6||(x>=2&&x<=4&&y>=2&&y<=4))?1:0}};fp(0,0);fp(N-7,0);fp(0,N-7);return m};
+const qr=s=>{const m=qrM(s),N=25;let r="";for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(m[y][x])r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;return`<svg class="qr" viewBox="0 0 ${N} ${N}" aria-hidden="true">${r}</svg>`};
+/* ---------- tickets live only for this browser tab; a page refresh clears them ---------- */
+const WN="RTB1:",MEM={all:[]};
+const getAll=()=>{try{const r=sessionStorage.getItem("rtb_all");if(r)return JSON.parse(r)}catch(e){}try{if(String(window.name).startsWith(WN))return JSON.parse(window.name.slice(WN.length))}catch(e){}return MEM.all};
+const setAll=a=>{MEM.all=a;const j=JSON.stringify(a);try{sessionStorage.setItem("rtb_all",j)}catch(e){}try{if(!window.name||String(window.name).startsWith(WN))window.name=WN+j}catch(e){}};
+const saveBk=X=>{const a=getAll().filter(b=>b.pnr!=X.pnr);a.unshift(X);setAll(a.slice(0,60))};
+const findBk=p=>getAll().find(b=>b.pnr==p);
+const idxOf=(X,cx)=>X.pax.map((p,i)=>i).filter(i=>cx?!!X.pax[i].cx:!X.pax[i].cx);
+const activeList=()=>getAll().map(X=>({X,idx:idxOf(X,false)})).filter(b=>b.idx.length);
+const cancelledList=()=>getAll().map(X=>({X,idx:idxOf(X,true)})).filter(b=>b.idx.length);
+const sub=(X,idx)=>({...X,pax:idx.map(i=>({...X.pax[i],_i:i}))});
+const FLAT={SL:120,"2S":60,"3A":180,"3E":180,CC:180,"2A":200,"1A":240,EC:240};
+const depTs=X=>new Date(X.iso+"T00:00:00").getTime()+(X.dm||0)*60000;
+function refund(X,p){const fare=p.fare??X.fr,h=X.iso?(depTs(X)-Date.now())/36e5:999;
+ if(h<=0)return{ok:false,msg:"The train has already departed, so this ticket cannot be cancelled."};
+ if(!p.ok){const c=Math.min(20,fare);return{ok:true,fare,charge:c,refund:fare-c,note:"Waiting list ticket: full refund minus Rs. 20."}}
+ if(X.q=="Tatkal")return{ok:true,fare,charge:fare,refund:0,note:"Tatkal tickets are non-refundable."};
+ const flat=Math.min(p.half?Math.round((FLAT[X.k]||120)/2):(FLAT[X.k]||120),fare);let c,note;
+ if(h>48){c=flat;note="More than 48 hours before departure: fixed cancellation charge."}
+ else if(h>12){c=Math.max(flat,Math.round(fare*.25));note="12 to 48 hours before departure: 25% of the fare is deducted."}
+ else if(h>=4){c=Math.max(flat,Math.round(fare*.5));note="4 to 12 hours before departure: 50% of the fare is deducted."}
+ else{c=fare;note="Less than 4 hours before departure: no refund."}
+ c=Math.min(c,fare);return{ok:true,fare,charge:c,refund:fare-c,note}}
+function applyCancel(pnr,idx){const a=getAll(),X=a.find(b=>b.pnr==pnr);if(!X)return null;
+ idx.forEach(i=>{const p=X.pax[i];if(p&&!p.cx){const r=refund(X,p);if(r.ok)p.cx={at:Date.now(),charge:r.charge,refund:r.refund}}});
+ setAll(a);window.dispatchEvent(new CustomEvent("rtb-updated",{detail:X}));return X}
+const POP=h=>{const d=document.createElement("div");d.className="mdl";d.innerHTML=`<div class="mbox">${h}</div>`;d.onclick=e=>{if(e.target==d||e.target.closest("[data-close]"))d.remove()};document.body.appendChild(d);return d};
+function cxModal(X,idx){const rows=idx.map(i=>({p:X.pax[i],r:refund(X,X.pax[i])}));
+ if(!rows.length)return POP(`<h3>Nothing to cancel</h3><p>All tickets in this booking are already cancelled.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
+ const bad=rows.find(x=>!x.r.ok);
+ if(bad)return POP(`<h3>Cannot cancel</h3><p>${E(bad.r.msg)}</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
+ const tot=rows.reduce((s,x)=>s+x.r.refund,0),notes=[...new Set(rows.map(x=>x.r.note))].join(" ");
+ const d=POP(`<h3>Cancel ${rows.length>1?rows.length+" tickets":"ticket"}?</h3><p class="sm">PNR ${E(X.pnr)} · ${E(X.an)} → ${E(X.bn)} · ${E(X.dd)}</p><div class="cxt">${rows.map(x=>`<div class="cxr"><b>${E(x.p.name)}</b><span>Fare ${rs(x.r.fare)} · Charge ${rs(x.r.charge)}</span><em>Refund ${rs(x.r.refund)}</em></div>`).join("")}</div><p class="note2">${E(notes)}</p><div class="cxs"><span>TOTAL REFUND</span><b>${rs(tot)}</b></div><div class="mb"><button type="button" class="btn ghost2" data-close>Keep Ticket</button><button type="button" class="btn red" id="cxok">Yes, Cancel</button></div>`);
+ d.querySelector("#cxok").onclick=()=>{applyCancel(X.pnr,idx);d.remove();POP(`<div class="cxdone">✓</div><h3>Ticket cancelled</h3><p>Refund of <b>${rs(tot)}</b> will be credited in 5-7 working days (simulation). The cancelled ticket now appears on the Cancel page.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`)}}
+/* ---------- rendering ---------- */
+const bannerHTML=X=>{const n=X.pax.length,cx=X.pax.filter(p=>p.cx).length,act=X.pax.filter(p=>!p.cx),wl=act.filter(p=>!p.ok).length,ref=X.pax.reduce((s,p)=>s+(p.cx?p.cx.refund:0),0);
+ if(cx==n)return `<div class="okb cxb"><div class="tick">✕</div><div class="oi"><b>Ticket Cancelled</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${n} passenger${n>1?"s":""} · refund will be credited in 5-7 working days (simulation)</span></div><div class="tot"><small>TOTAL REFUND</small><b>${rs(ref)}</b></div></div>`;
+ const t=wl==0?"Ticket Booked Successfully!":wl==act.length?"Ticket Booked - Waiting List":"Ticket Booked - "+(act.length-wl)+" Confirmed, "+wl+" Waiting";
+ return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==act.length?"!":"✓"}</div><div class="oi"><b>${t}</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${act.length} passenger${act.length>1?"s":""} · ${E(X.q)}${cx?" · "+cx+" cancelled (refund "+rs(ref)+")":""}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(act.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
+const tkHTML=X=>X.pax.map((p,i)=>{const oi=p._i??i;return`<article class="tk2 ${p.cx?"cxl":p.ok?"cnf":"wl"} ${X.q=="Tatkal"?"tkt":"tkg"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small><span class="qt">${X.q=="Tatkal"?"⚡ TATKAL":"GENERAL"}</span></div><div class="pnrb" data-copy="${E(X.pnr)}" title="Tap to copy PNR"><small>PNR NUMBER</small><b>${E(X.pnr)}</b></div></div>
 <div class="tk2b"><div class="tk2l"><div class="tkid">TICKET ID ${E(p.tid)}</div><div class="trn"><b>${E(X.tn)}</b><span>#${E(X.tno)} · ${E(X.ty)}</span></div>
 <div class="rtx"><div><strong>${E(X.a)}</strong><span>${E(X.an)}</span><small>DEPARTS</small><em>${apm(X.dep)}</em><span>${E(X.dd)}</span></div><div class="mid"><i></i><span>${E(X.dist)} km</span><span>⏱ ${E(X.dur)}</span></div><div class="r"><strong>${E(X.b)}</strong><span>${E(X.bn)}</span><small>ARRIVES</small><em>${apm(X.arr)}</em><span>${E(X.ad)}</span></div></div>
 <div class="dg2"><div><span class="lab">PASSENGER</span><b>${E(p.name)}</b></div><div><span class="lab">AGE / GENDER</span><b>${E(p.age)} / ${E(p.g)}</b></div><div><span class="lab">CLASS</span><b>${E(X.cn)} (${E(X.k)})</b></div><div><span class="lab">QUOTA</span><b>${E(X.q)}</b></div>
 <div><span class="lab">SEAT NO.</span><b>${E(p.seat)}</b></div><div><span class="lab">BERTH / SEAT TYPE</span><b>${E(p.bt)}</b></div><div><span class="lab">JOURNEY DATE</span><b>${E(X.dd)}</b></div><div><span class="lab">TICKET TYPE</span><b>${p.half?"Half Ticket (Child)":"Full Ticket"}</b></div></div></div>
-<div class="tk2r"><div class="stamp">${E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(X.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div></div></div>
-<div class="tk2f">Simulation ticket · for learning purposes only · Have a safe journey 🚂</div></article>`).join("");
+<div class="tk2r"><div class="stamp">${p.cx?"CANCELLED":E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(X.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div>${p.cx?`<div class="cxd">Refund ${rs(p.cx.refund)}<small>Charge ${rs(p.cx.charge)}</small></div>`:`<a class="cxbtn" href="cancel.html#p=${E(X.pnr)}&amp;i=${oi}" data-go="cancel" data-p="${E(X.pnr)}" data-i="${oi}">✕ Cancel Ticket</a>`}</div></div>
+<div class="tk2f">Simulation ticket · for learning purposes only · Have a safe journey 🚂</div></article>`}).join("");
 const confetti=()=>{if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const C=["#ffc72c","#7c5cff","#3b4ef0","#2fe39a","#ff6a5c","#ffffff"];for(let i=0;i<70;i++){const e=document.createElement("i");e.className="cf";e.style.left=Math.random()*100+"vw";e.style.background=C[i%6];e.style.setProperty("--dx",(Math.random()*200-100)+"px");e.style.animationDelay=Math.random()*.5+"s";e.style.animationDuration=(1.8+Math.random()*1.4)+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4300)}};
+const TOAST=m=>{const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1900)};
+document.addEventListener("click",e=>{const c=e.target.closest("[data-copy]");if(!c)return;const v=c.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>TOAST("PNR "+v+" copied"),()=>TOAST("PNR "+v))}catch(x){TOAST("PNR "+v)}});
  
-const dlX=()=>{try{const m=location.hash.match(/d=([^&]+)/);if(m)return JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1])))))}catch(e){}if(window.RTB_DATA)return window.RTB_DATA;try{return JSON.parse(localStorage.getItem("rtb_last"))}catch(e){}return null};
 const esc=s=>String(s).replace(/[^\x20-\x7e]/g,"?").replace(/[\\()]/g,"\\$&");
 const N="0.04 0.07 0.22",G="0.43 0.47 0.6";
 const tx=(x,y,s,z,b,c)=>`BT /F${b?2:1} ${z} Tf ${c||N} rg ${x} ${y} Td (${esc(s)}) Tj ET\n`;
@@ -460,25 +609,30 @@ function mkpdf(pg){let out="%PDF-1.4\n",off=[];const add=s=>{off.push(out.length
  pg.forEach((c,i)=>{add("<</Type/Page/Parent 2 0 R/MediaBox[0 0 595 842]/Resources<</Font<</F1 3 0 R/F2 4 0 R>>>>/Contents "+(6+i*2)+" 0 R>>");add("<</Length "+c.length+">>\nstream\n"+c+"\nendstream")});
  const x=out.length;out+="xref\n0 "+(off.length+1)+"\n0000000000 65535 f \n"+off.map(v=>String(v).padStart(10,"0")+" 00000 n \n").join("")+"trailer\n<</Size "+(off.length+1)+"/Root 1 0 R>>\nstartxref\n"+x+"\n%%EOF";
  return new Blob([out],{type:"application/pdf"})}
-function pdf(){const X=window.DLX,pg=[];
- X.pax.forEach((p,i)=>{if(i%3==0)pg.push("");const by=562-(i%3)*270;let c=`${N} RG 1.2 w 30 ${by} 535 250 re S\n`+rc(30,by+215,535,35,N)+tx(42,by+228,"Railway Ticket Booking",14,1,"1 1 1")+tx(330,by+229,"PNR "+X.pnr+"  |  ID "+p.tid,9,0,"1 1 1");
-  c+=tx(42,by+170,X.a,28,1)+tx(300,by+170,X.b,28,1)+tx(134,by+176,"------- "+X.dist+" km -------",9,0,"0.23 0.31 0.94");
+function pdf(items,name){const pg=[];
+ items.forEach(({X,p},i)=>{if(i%3==0)pg.push("");const by=562-(i%3)*270,T=X.q=="Tatkal",HC=T?"0.66 0.07 0.24":N;let c=`${HC} RG 1.2 w 30 ${by} 535 250 re S\n`+rc(30,by+215,535,35,HC)+tx(42,by+228,"Railway Ticket Booking",14,1,"1 1 1")+(T?tx(205,by+229,"| TATKAL",10,1,"1 0.85 0.4"):"")+tx(340,by+229,"PNR "+X.pnr+"  |  ID "+p.tid,9,0,"1 1 1");
+  c+=tx(42,by+170,X.a,28,1,T?HC:N)+tx(300,by+170,X.b,28,1,T?HC:N)+tx(134,by+176,"------- "+X.dist+" km -------",9,0,T?"1 0.42 0.3":"0.23 0.31 0.94");
   c+=tx(42,by+152,X.an,10)+tx(300,by+152,X.bn,10)+tx(42,by+137,"DEPARTS "+X.dep+"  |  "+X.dd,10,1)+tx(300,by+137,"ARRIVES "+X.arr+"  |  "+X.ad,10,1);
-  c+=tx(42,by+118,X.tn+" (#"+X.tno+") - "+X.ty+"  |  Duration "+X.dur,10,0,"0.23 0.31 0.94");
-  const col=p.ok?"0.07 0.5 0.36":"0.89 0.22 0.17";c+=rc(440,by+160,110,26,col)+tx(450,by+169,p.lab,11,1,"1 1 1")+(p.half?tx(440,by+141,"HALF TICKET (CHILD)",9,1,"0.85 0.4 0.05"):"");
-  [["Passenger",p.name],["Age / Gender",p.age+" / "+p.g],["Class / Quota",X.cn+" / "+X.q],["Seat No.",p.seat],["Berth / Seat Type",p.bt],["Fare","Rs. "+Number(p.fare??X.fr).toLocaleString("en-IN")+(p.half?" (HALF)":"")]].forEach((r,j)=>{const x=42+(j%3)*185,y=by+86-Math.floor(j/3)*38;c+=tx(x,y+14,r[0].toUpperCase(),7,0,G)+tx(x,y,String(r[1]).slice(0,28),11,1)});
-  let bx=400;for(const ch of p.tid){const w=.7+(ch.charCodeAt(0)%4)*.4;c+=rc(bx,by+14,w,22,N);bx+=w+.9}
+  c+=tx(42,by+118,X.tn+" (#"+X.tno+") - "+X.ty+"  |  Duration "+X.dur,10,0,T?HC:"0.23 0.31 0.94");
+  c+=rc(440,by+160,110,26,p.ok?"0.07 0.5 0.36":"0.89 0.22 0.17")+tx(450,by+169,p.lab,11,1,"1 1 1")+(p.half?tx(440,by+196,"HALF TICKET (CHILD)",9,1,"0.85 0.4 0.05"):"");
+  [["Passenger",p.name],["Age / Gender",p.age+" / "+p.g],["Class / Quota",X.cn+" / "+X.q],["Seat No.",p.seat],["Berth / Seat Type",p.bt],["Fare","Rs. "+Number(p.fare??X.fr).toLocaleString("en-IN")+(p.half?" (HALF)":"")]].forEach((r,j)=>{const x=42+(j%3)*148,y=by+86-Math.floor(j/3)*38;c+=tx(x,y+14,r[0].toUpperCase(),7,0,G)+tx(x,y,String(r[1]).slice(0,20),11,1)});
+  const M=qrM(X.pnr+p.tid),s=2.2;for(let y=0;y<25;y++)for(let x=0;x<25;x++)if(M[y][x])c+=rc((492+x*s).toFixed(1),(by+127-(y+1)*s).toFixed(1),s.toFixed(1),s.toFixed(1),N);
+  let bx=420;barA(p.tid).forEach(([w,m])=>{c+=rc(bx.toFixed(1),by+14,(w*.8).toFixed(1),24,N);bx+=w*.8+m*.6});
   c+=tx(42,by+16,"Simulation ticket - for learning purposes only",7,0,G);pg[pg.length-1]+=c});
- const u=URL.createObjectURL(mkpdf(pg)),a=document.createElement("a");a.href=u;a.download="Ticket-"+X.pnr+".pdf";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
-function renderDl(){const box=$("dlbox");if(!box)return;const X=dlX();
- if(!X||!X.pax){box.innerHTML=`<div class="panel empty"><h2>No ticket yet</h2><p>You have not booked a ticket. Book one first and it will appear here for download.</p><a class="btn blue" href="booking.html" data-go="booking">Book Ticket →</a></div>`;return}
- window.DLX=X;box.innerHTML=bannerHTML(X)+`<div class="dlbar"><button type="button" class="btn" id="dpdf">⬇ Download PDF</button><a class="btn ghost2" href="booking.html" data-go="booking">Book Another</a></div>`+tkHTML(X);
- $("dpdf").onclick=pdf}
+ const u=URL.createObjectURL(mkpdf(pg)),a=document.createElement("a");a.href=u;a.download=name+".pdf";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+function renderDl(){const box=$("dlbox");if(!box)return;const L=activeList();
+ if(!L.length){box.innerHTML=`<div class="panel empty"><h2>No active tickets</h2><p>Your booked tickets are shown here. Book a ticket first. Cancelled tickets move to the Cancel page.</p><a class="btn blue" href="booking.html" data-go="booking">Book Ticket →</a></div>`;return}
+ const n=L.reduce((s,b)=>s+b.idx.length,0);
+ box.innerHTML=`<div class="dlhead"><div><b>${n}</b> active ticket${n>1?"s":""} · <b>${L.length}</b> booking${L.length>1?"s":""}</div><button type="button" class="btn" id="dall">⬇ Download All (PDF)</button></div>`+L.map(({X,idx})=>`<section class="bkg">${bannerHTML(sub(X,idx))}<div class="dlbar"><button type="button" class="btn dpb" data-pnr="${E(X.pnr)}">⬇ Download PDF</button><a class="btn ghost2" href="cancel.html#p=${E(X.pnr)}" data-go="cancel" data-p="${E(X.pnr)}">✕ Cancel Ticket</a></div>${tkHTML(sub(X,idx))}</section>`).join("");
+ $("dall").onclick=()=>pdf(L.flatMap(({X,idx})=>idx.map(i=>({X,p:X.pax[i]}))),"Tickets-"+n);
+ box.querySelectorAll(".dpb").forEach(b=>b.onclick=()=>{const e=L.find(l=>l.X.pnr==b.dataset.pnr);pdf(e.idx.map(i=>({X:e.X,p:e.X.pax[i]})),"Ticket-"+e.X.pnr)})}
+addEventListener("rtb-updated",()=>renderDl());
 if(!window.RTB_PREVIEW)renderDl();
  
 document.querySelectorAll(".back").forEach(b=>{b.onclick=()=>{history.length>1?history.back():location.href="index.html"};if(history.length<2&&b.dataset.home)b.style.display="none"});
 if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".card,.step,.stat,.band,.cta,.rc,.board,.hc:not(.imp)").forEach(x=>{x.classList.add("rv");io.observe(x)})}
 document.querySelectorAll("[data-count]").forEach(el=>{const n=+el.dataset.count,sf=el.dataset.suf||"",run=()=>{let t0=null;const st=ts=>{t0=t0||ts;const p=Math.min(1,(ts-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+sf;if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)};if("IntersectionObserver"in window){el.textContent="0"+sf;const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){run();o.disconnect()}});o.observe(el)}});
 (()=>{const sp=document.createElement("div");sp.id="sp";document.body.appendChild(sp);const u=()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;sp.style.width=(m>0?h.scrollTop/m*100:0)+"%"};addEventListener("scroll",u,{passive:true});u();const hero=document.querySelector(".hero");if(hero&&matchMedia("(hover:hover)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")})})();
+(()=>{const h=document.querySelector("header");if(!h)return;const set=()=>document.documentElement.style.setProperty("--hh",h.getBoundingClientRect().height+"px");set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(h);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
  
 </script></body></html>

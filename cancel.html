@@ -534,25 +534,96 @@ a.cxbtn{display:inline-block;text-align:center;text-decoration:none}
 .cxsum{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:#fff4f3;border:1px solid #f3b6b0;border-radius:16px;padding:12px 16px;margin-top:8px;color:#7a1d14}
 .cxsum em{margin-left:auto;font-style:normal;font-weight:800;color:#c0291d}
 @media print{.backbar{display:none!important}}
-</style><meta name="theme-color" content="#0f1b3d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E"><title>About</title></head><body>
-<header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html">Book Ticket</a><a href="download.html">Download</a><a href="cancel.html">Cancel</a><a href="about.html" class="on">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div>
-<div class="pagehead"><div class="wrap"><h1>Railway Ticket Booking</h1><p>Railway Ticket Booking Simulation System</p></div></div>
-<div class="wrap"><div class="prose"><h2>About This Project</h2>
-<p>Railway Ticket Booking Simulation is a first-year web designing mini project developed using HTML, CSS and JavaScript.</p>
-<p>This project provides a simple interface for entering railway journey and passenger details.</p></div>
-<div class="hg" style="margin-top:0">
-<div class="hc"><div class="hh"><span class="no">📘</span><h2>Project Overview</h2></div><p>This website imitates how an online railway ticket booking portal works. A user can search trains between stations across India, compare classes and fares, add passenger details and generate a ticket that can be downloaded as a PDF.</p></div>
-<div class="hc"><div class="hh"><span class="no">🎯</span><h2>Objective</h2></div><p>The main goal is to learn how a real booking system is planned: taking input, validating it, searching data, calculating fares and showing a clear result, all using core web technologies.</p></div>
-<div class="hc wide"><div class="hh"><span class="no">✨</span><h2>Key Features</h2></div><ul><li>Stations and trains across India</li><li>Train timings with duration and arrival</li><li>Distance-based fare for every class</li><li>General and Tatkal ticket types</li><li>Berth and seat preference</li><li>Multiple passengers with separate seats</li><li>Confirmed and Waiting List ticket status</li><li>PNR number on every ticket</li><li>Download page for your ticket</li><li>Half ticket and half fare for children below 10 years</li><li>Cancel ticket with refund calculation</li><li>Active tickets on the Download page, cancelled tickets on the Cancel page</li><li>Different design for Tatkal and General tickets</li></ul></div>
-<div class="hc"><div class="hh"><span class="no">💰</span><h2>How Fare Is Calculated</h2></div><p>Fare depends on the distance between stations, the train type and the selected class. Longer journeys cost more, but the fare stays affordable and never crosses Rs. 2000. Tatkal tickets carry an extra charge.</p></div>
-<div class="hc"><div class="hh"><span class="no">🚆</span><h2>Travel Classes</h2></div><ul><li>Second Sitting (2S)</li><li>Sleeper (SL)</li><li>AC Chair Car (CC)</li><li>Executive Chair Car (EC)</li><li>AC 3 Tier (3A) and AC 3 Economy (3E)</li><li>AC 2 Tier (2A)</li><li>First AC (1A)</li></ul></div>
-<div class="hc"><div class="hh"><span class="no">🛠️</span><h2>Technologies Used</h2></div><ul><li><b>HTML</b> - Page structure</li><li><b>CSS</b> - Design and responsive layout</li><li><b>JavaScript</b> - Search, fare logic and tickets</li></ul></div>
-<div class="hc warn"><div class="hh"><span class="no">⚠️</span><h2>Important Note</h2></div><p>This is a learning simulation. Train timings, fares and seat details are approximate and generated for demonstration only, so tickets made here are not valid for real travel.</p></div>
-<div class="hc wide"><div class="hh"><span class="no">👨‍💻</span><h2>Developer</h2></div><p><b>Pankaj Ahirwar</b><br>B.Tech First Year Student</p><p>Built as a mini project to practise web design and programming.</p></div>
-</div></div>
+</style><meta name="theme-color" content="#0f1b3d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E"><title>Cancel Ticket</title></head><body>
+<header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html">Book Ticket</a><a href="download.html">Download</a><a href="cancel.html" class="on">Cancel</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div><div class="pagehead"><div class="wrap"><h1>Cancel Ticket</h1><p>Enter your PNR to cancel a ticket. Cancelled tickets are shown on this page.</p></div></div>
+<div class="wrap"><div class="cxwrap"><form class="panel" id="cf" novalidate><label for="cp">🎟️ PNR Number</label><div class="cprow"><input id="cp" list="pl" inputmode="numeric" maxlength="10" placeholder="Enter 10-digit PNR" autocomplete="off"><datalist id="pl"></datalist><button class="btn blue">Find Ticket</button><button type="button" class="btn ghost2" id="lastp">Use my last ticket PNR</button></div><div class="err" id="cerr" role="alert"></div><span class="hint">Enter the PNR shown on your ticket in the Download page (tap the PNR on a ticket to copy it). Active tickets are shown on the Download page, and only cancelled tickets are shown here.</span></form><div id="cres"></div><div id="crec"></div></div></div>
 <footer><b>Railway Ticket Booking Simulation</b>B.Tech First Year Mini Project<br>Designed &amp; Developed by: <em>Pankaj Ahirwar</em></footer><script>
 (()=>{let r=false;try{const n=performance.getEntriesByType("navigation")[0];r=n?n.type==="reload":!!(performance.navigation&&performance.navigation.type===1)}catch(e){}
 if(r){try{sessionStorage.removeItem("rtb_all")}catch(e){}try{localStorage.removeItem("rtb_all");localStorage.removeItem("rtb_last")}catch(e){}try{if(String(window.name).startsWith("RTB1:"))window.name=""}catch(e){}}})();
+ 
+const $=i=>document.getElementById(i);
+const E=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const apm=s=>E(s).replace(/ (AM|PM)$/,' <small class="ap">$1</small>');
+const rs=x=>"₹"+Number(x).toLocaleString("en-IN");
+const barA=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,33)+c.charCodeAt(0))>>>0;const o=[];for(let i=0;i<38;i++){h=(Math.imul(h,1664525)+1013904223)>>>0;o.push([1+(h>>>16)%4,1+(h>>>20)%3])}return o};
+const bars=s=>barA(s).map(([w,m])=>`<span style="width:${w}px;margin-right:${m}px"></span>`).join("");
+const qrM=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,31)+c.charCodeAt(0))>>>0;const N=25,m=[];for(let y=0;y<N;y++){m[y]=[];for(let x=0;x<N;x++){h=(Math.imul(h,1664525)+1013904223)>>>0;m[y][x]=(h>>>24)&1}}
+ const fp=(ox,oy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const X=ox+x,Y=oy+y;if(X<0||Y<0||X>=N||Y>=N)continue;const e=x>=0&&x<7&&y>=0&&y<7;m[Y][X]=e&&(x==0||y==0||x==6||y==6||(x>=2&&x<=4&&y>=2&&y<=4))?1:0}};fp(0,0);fp(N-7,0);fp(0,N-7);return m};
+const qr=s=>{const m=qrM(s),N=25;let r="";for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(m[y][x])r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;return`<svg class="qr" viewBox="0 0 ${N} ${N}" aria-hidden="true">${r}</svg>`};
+/* ---------- tickets live only for this browser tab; a page refresh clears them ---------- */
+const WN="RTB1:",MEM={all:[]};
+const getAll=()=>{try{const r=sessionStorage.getItem("rtb_all");if(r)return JSON.parse(r)}catch(e){}try{if(String(window.name).startsWith(WN))return JSON.parse(window.name.slice(WN.length))}catch(e){}return MEM.all};
+const setAll=a=>{MEM.all=a;const j=JSON.stringify(a);try{sessionStorage.setItem("rtb_all",j)}catch(e){}try{if(!window.name||String(window.name).startsWith(WN))window.name=WN+j}catch(e){}};
+const saveBk=X=>{const a=getAll().filter(b=>b.pnr!=X.pnr);a.unshift(X);setAll(a.slice(0,60))};
+const findBk=p=>getAll().find(b=>b.pnr==p);
+const idxOf=(X,cx)=>X.pax.map((p,i)=>i).filter(i=>cx?!!X.pax[i].cx:!X.pax[i].cx);
+const activeList=()=>getAll().map(X=>({X,idx:idxOf(X,false)})).filter(b=>b.idx.length);
+const cancelledList=()=>getAll().map(X=>({X,idx:idxOf(X,true)})).filter(b=>b.idx.length);
+const sub=(X,idx)=>({...X,pax:idx.map(i=>({...X.pax[i],_i:i}))});
+const FLAT={SL:120,"2S":60,"3A":180,"3E":180,CC:180,"2A":200,"1A":240,EC:240};
+const depTs=X=>new Date(X.iso+"T00:00:00").getTime()+(X.dm||0)*60000;
+function refund(X,p){const fare=p.fare??X.fr,h=X.iso?(depTs(X)-Date.now())/36e5:999;
+ if(h<=0)return{ok:false,msg:"The train has already departed, so this ticket cannot be cancelled."};
+ if(!p.ok){const c=Math.min(20,fare);return{ok:true,fare,charge:c,refund:fare-c,note:"Waiting list ticket: full refund minus Rs. 20."}}
+ if(X.q=="Tatkal")return{ok:true,fare,charge:fare,refund:0,note:"Tatkal tickets are non-refundable."};
+ const flat=Math.min(p.half?Math.round((FLAT[X.k]||120)/2):(FLAT[X.k]||120),fare);let c,note;
+ if(h>48){c=flat;note="More than 48 hours before departure: fixed cancellation charge."}
+ else if(h>12){c=Math.max(flat,Math.round(fare*.25));note="12 to 48 hours before departure: 25% of the fare is deducted."}
+ else if(h>=4){c=Math.max(flat,Math.round(fare*.5));note="4 to 12 hours before departure: 50% of the fare is deducted."}
+ else{c=fare;note="Less than 4 hours before departure: no refund."}
+ c=Math.min(c,fare);return{ok:true,fare,charge:c,refund:fare-c,note}}
+function applyCancel(pnr,idx){const a=getAll(),X=a.find(b=>b.pnr==pnr);if(!X)return null;
+ idx.forEach(i=>{const p=X.pax[i];if(p&&!p.cx){const r=refund(X,p);if(r.ok)p.cx={at:Date.now(),charge:r.charge,refund:r.refund}}});
+ setAll(a);window.dispatchEvent(new CustomEvent("rtb-updated",{detail:X}));return X}
+const POP=h=>{const d=document.createElement("div");d.className="mdl";d.innerHTML=`<div class="mbox">${h}</div>`;d.onclick=e=>{if(e.target==d||e.target.closest("[data-close]"))d.remove()};document.body.appendChild(d);return d};
+function cxModal(X,idx){const rows=idx.map(i=>({p:X.pax[i],r:refund(X,X.pax[i])}));
+ if(!rows.length)return POP(`<h3>Nothing to cancel</h3><p>All tickets in this booking are already cancelled.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
+ const bad=rows.find(x=>!x.r.ok);
+ if(bad)return POP(`<h3>Cannot cancel</h3><p>${E(bad.r.msg)}</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
+ const tot=rows.reduce((s,x)=>s+x.r.refund,0),notes=[...new Set(rows.map(x=>x.r.note))].join(" ");
+ const d=POP(`<h3>Cancel ${rows.length>1?rows.length+" tickets":"ticket"}?</h3><p class="sm">PNR ${E(X.pnr)} · ${E(X.an)} → ${E(X.bn)} · ${E(X.dd)}</p><div class="cxt">${rows.map(x=>`<div class="cxr"><b>${E(x.p.name)}</b><span>Fare ${rs(x.r.fare)} · Charge ${rs(x.r.charge)}</span><em>Refund ${rs(x.r.refund)}</em></div>`).join("")}</div><p class="note2">${E(notes)}</p><div class="cxs"><span>TOTAL REFUND</span><b>${rs(tot)}</b></div><div class="mb"><button type="button" class="btn ghost2" data-close>Keep Ticket</button><button type="button" class="btn red" id="cxok">Yes, Cancel</button></div>`);
+ d.querySelector("#cxok").onclick=()=>{applyCancel(X.pnr,idx);d.remove();POP(`<div class="cxdone">✓</div><h3>Ticket cancelled</h3><p>Refund of <b>${rs(tot)}</b> will be credited in 5-7 working days (simulation). The cancelled ticket now appears on the Cancel page.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`)}}
+/* ---------- rendering ---------- */
+const bannerHTML=X=>{const n=X.pax.length,cx=X.pax.filter(p=>p.cx).length,act=X.pax.filter(p=>!p.cx),wl=act.filter(p=>!p.ok).length,ref=X.pax.reduce((s,p)=>s+(p.cx?p.cx.refund:0),0);
+ if(cx==n)return `<div class="okb cxb"><div class="tick">✕</div><div class="oi"><b>Ticket Cancelled</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${n} passenger${n>1?"s":""} · refund will be credited in 5-7 working days (simulation)</span></div><div class="tot"><small>TOTAL REFUND</small><b>${rs(ref)}</b></div></div>`;
+ const t=wl==0?"Ticket Booked Successfully!":wl==act.length?"Ticket Booked - Waiting List":"Ticket Booked - "+(act.length-wl)+" Confirmed, "+wl+" Waiting";
+ return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==act.length?"!":"✓"}</div><div class="oi"><b>${t}</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${act.length} passenger${act.length>1?"s":""} · ${E(X.q)}${cx?" · "+cx+" cancelled (refund "+rs(ref)+")":""}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(act.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
+const tkHTML=X=>X.pax.map((p,i)=>{const oi=p._i??i;return`<article class="tk2 ${p.cx?"cxl":p.ok?"cnf":"wl"} ${X.q=="Tatkal"?"tkt":"tkg"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small><span class="qt">${X.q=="Tatkal"?"⚡ TATKAL":"GENERAL"}</span></div><div class="pnrb" data-copy="${E(X.pnr)}" title="Tap to copy PNR"><small>PNR NUMBER</small><b>${E(X.pnr)}</b></div></div>
+<div class="tk2b"><div class="tk2l"><div class="tkid">TICKET ID ${E(p.tid)}</div><div class="trn"><b>${E(X.tn)}</b><span>#${E(X.tno)} · ${E(X.ty)}</span></div>
+<div class="rtx"><div><strong>${E(X.a)}</strong><span>${E(X.an)}</span><small>DEPARTS</small><em>${apm(X.dep)}</em><span>${E(X.dd)}</span></div><div class="mid"><i></i><span>${E(X.dist)} km</span><span>⏱ ${E(X.dur)}</span></div><div class="r"><strong>${E(X.b)}</strong><span>${E(X.bn)}</span><small>ARRIVES</small><em>${apm(X.arr)}</em><span>${E(X.ad)}</span></div></div>
+<div class="dg2"><div><span class="lab">PASSENGER</span><b>${E(p.name)}</b></div><div><span class="lab">AGE / GENDER</span><b>${E(p.age)} / ${E(p.g)}</b></div><div><span class="lab">CLASS</span><b>${E(X.cn)} (${E(X.k)})</b></div><div><span class="lab">QUOTA</span><b>${E(X.q)}</b></div>
+<div><span class="lab">SEAT NO.</span><b>${E(p.seat)}</b></div><div><span class="lab">BERTH / SEAT TYPE</span><b>${E(p.bt)}</b></div><div><span class="lab">JOURNEY DATE</span><b>${E(X.dd)}</b></div><div><span class="lab">TICKET TYPE</span><b>${p.half?"Half Ticket (Child)":"Full Ticket"}</b></div></div></div>
+<div class="tk2r"><div class="stamp">${p.cx?"CANCELLED":E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(X.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div>${p.cx?`<div class="cxd">Refund ${rs(p.cx.refund)}<small>Charge ${rs(p.cx.charge)}</small></div>`:`<a class="cxbtn" href="cancel.html#p=${E(X.pnr)}&amp;i=${oi}" data-go="cancel" data-p="${E(X.pnr)}" data-i="${oi}">✕ Cancel Ticket</a>`}</div></div>
+<div class="tk2f">Simulation ticket · for learning purposes only · Have a safe journey 🚂</div></article>`}).join("");
+const confetti=()=>{if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const C=["#ffc72c","#7c5cff","#3b4ef0","#2fe39a","#ff6a5c","#ffffff"];for(let i=0;i<70;i++){const e=document.createElement("i");e.className="cf";e.style.left=Math.random()*100+"vw";e.style.background=C[i%6];e.style.setProperty("--dx",(Math.random()*200-100)+"px");e.style.animationDelay=Math.random()*.5+"s";e.style.animationDuration=(1.8+Math.random()*1.4)+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4300)}};
+const TOAST=m=>{const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1900)};
+document.addEventListener("click",e=>{const c=e.target.closest("[data-copy]");if(!c)return;const v=c.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>TOAST("PNR "+v+" copied"),()=>TOAST("PNR "+v))}catch(x){TOAST("PNR "+v)}});
+ 
+function showBk(pnr,pre){const X=findBk(pnr),box=$("cres");if(!box)return false;
+ if(!X){box.innerHTML="";box.dataset.pnr="";return false}
+ const idx=idxOf(X,false);box.dataset.pnr=pnr;
+ if(!idx.length){box.innerHTML=`<div class="okb cxb"><div class="tick">✕</div><div class="oi"><b>Already cancelled</b><span>All tickets of PNR <strong>${E(X.pnr)}</strong> are cancelled. You can see them below.</span></div></div>`;return true}
+ const one=idx.length==1;
+ box.innerHTML=`<div class="cxcard"><div class="bksum"><div><span class="lab">PNR</span><b>${E(X.pnr)}</b></div><div><span class="lab">ROUTE</span><b>${E(X.a)} → ${E(X.b)}</b></div><div><span class="lab">JOURNEY</span><b>${E(X.dd)} · ${E(X.dep)}</b></div><div><span class="lab">QUOTA</span><b>${E(X.q)}</b></div></div>
+ <div class="cxlist">${idx.map(i=>{const p=X.pax[i];return`<label class="cxrow"><input type="checkbox" class="cxk" value="${i}" ${(one||(pre!=null&&+pre==i))?"checked":""}><span class="cxn"><b>${E(p.name)}</b><small>${E(p.age)} / ${E(p.g)} · ${E(X.cn)} (${E(X.k)}) · Seat ${E(p.seat)} · ${E(p.lab)}</small></span><em>${rs(p.fare??X.fr)}</em></label>`}).join("")}</div>
+ <div class="dlbar"><button type="button" class="btn ghost2" id="cxsa">Select all</button><button type="button" class="btn red" id="cxgo">✕ Cancel Selected Ticket</button></div><span class="hint">You will see the refund amount before you confirm.</span></div>`;
+ $("cxsa").onclick=()=>box.querySelectorAll(".cxk").forEach(c=>c.checked=true);
+ $("cxgo").onclick=()=>{const sel=[...box.querySelectorAll(".cxk:checked")].map(c=>+c.value);if(!sel.length){TOAST("Select at least one passenger");return}cxModal(X,sel)};
+ return true}
+function renderCancel(){const rec=$("crec");if(!rec)return;const A=activeList(),C=cancelledList();
+ if($("pl"))$("pl").innerHTML=A.map(({X})=>`<option value="${E(X.pnr)}">${E(X.a)} → ${E(X.b)} · ${E(X.dd)}</option>`).join("");
+ rec.innerHTML=C.length?`<h3 class="rh2">Cancelled tickets</h3>`+C.map(({X,idx})=>{const Y=sub(X,idx),ref=Y.pax.reduce((s,p)=>s+p.cx.refund,0);return`<div class="cxsum"><b>PNR ${E(X.pnr)}</b><span>${E(X.a)} → ${E(X.b)} · ${E(X.dd)} · ${idx.length} cancelled</span><em>Refund ${rs(ref)}</em></div>`+tkHTML(Y)}).join(""):`<div class="panel empty"><h3>No cancelled tickets</h3><p>Tickets you cancel are shown here with their refund details.</p></div>`;
+ const m=location.hash.match(/p=(\d{10})/),i=location.hash.match(/i=(\d+)/);if(m&&$("cp")&&!$("cp").value){$("cp").value=m[1];showBk(m[1],i?i[1]:null)}}
+window.cxOpen=(p,i)=>{if(!$("cp"))return;$("cp").value=p;$("cerr").textContent="";showBk(p,i==null||i===""?null:i)};
+const cf=$("cf");
+if(cf){cf.onsubmit=e=>{e.preventDefault();const p=$("cp").value.replace(/\D/g,""),er=$("cerr");
+  if(p.length!=10){er.textContent="Please enter a valid 10-digit PNR number.";$("cres").innerHTML="";return}
+  if(!showBk(p)){er.textContent="No ticket found for this PNR. Enter the PNR shown on a ticket on the Download page (tickets are cleared when the page is refreshed).";return}
+  er.textContent="";$("cres").scrollIntoView({behavior:"smooth"})};
+ $("cp").oninput=()=>{$("cp").value=$("cp").value.replace(/\D/g,"").slice(0,10)};
+ $("lastp").onclick=()=>{const a=activeList();if(!a.length){$("cerr").textContent="You have no active ticket to cancel.";return}$("cp").value=a[0].X.pnr;$("cerr").textContent="";showBk(a[0].X.pnr);$("cres").scrollIntoView({behavior:"smooth"})};
+ addEventListener("rtb-updated",e=>{renderCancel();if($("cres").dataset.pnr)showBk($("cres").dataset.pnr)});
+ if(!window.RTB_PREVIEW)renderCancel()}
  
 document.querySelectorAll(".back").forEach(b=>{b.onclick=()=>{history.length>1?history.back():location.href="index.html"};if(history.length<2&&b.dataset.home)b.style.display="none"});
 if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".card,.step,.stat,.band,.cta,.rc,.board,.hc:not(.imp)").forEach(x=>{x.classList.add("rv");io.observe(x)})}

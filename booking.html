@@ -426,14 +426,122 @@ input:hover,select:hover{border-color:#b9c4ff}
 @keyframes cf{to{transform:translate3d(var(--dx),108vh,0) rotate(720deg)}}
 @media(prefers-reduced-motion:reduce){.cloud,.cf{animation:none}.cloud{display:none}}
 @media(max-width:820px){.hero{border-radius:0 0 30px 30px}.sky{bottom:70px;height:110px}.tk2l:after{font-size:5rem}}
+/* v11 */
+.backbar{height:0;background:none;overflow:visible;position:static}
+.backbar .wrap{padding:0}
+.back{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:55;background:rgba(11,18,56,.92);backdrop-filter:blur(8px);border:1px solid #ffffff44;color:#fff;border-radius:99px;padding:10px 18px;font-weight:800;font-size:.85rem;box-shadow:0 10px 26px #0b123866}
+.back:hover{background:var(--yellow);color:var(--ink)}
+.hero{padding-top:46px}
+nav{gap:1px}
+nav a{font-size:clamp(.6rem,2.7vw,.98rem);padding:6px clamp(4px,1.6vw,18px)}
+small.hint,.hint{display:block;color:var(--mute);font-size:.76rem;margin-top:5px;font-weight:600}
+/* tatkal vs general ticket */
+.tk2{position:relative}
+.qt{display:inline-block;margin-top:6px;background:#ffffff22;border:1px solid #ffffff55;color:#fff;font-weight:800;font-size:.68rem;letter-spacing:.12em;padding:2px 10px;border-radius:99px}
+.tkt{border-color:#ffd2ad;box-shadow:0 22px 50px #d6350c33}
+.tkt .tk2h{background:linear-gradient(120deg,#6b1200,#d6350c 55%,#ff8a1f)}
+.tkt .qt{background:#ffd75e;color:#6b1200;border-color:#ffd75e}
+.tkt .rtx strong,.tkt .price,.tkt .ap{color:#d6350c}
+.tkt .mid i{border-top-color:#ff8a1f}
+.tkt .tk2r{background:linear-gradient(160deg,#fff1e2,#fff 55%,#ffe3c2)}
+.tkt .tk2f{background:#fff1e2}
+.tkt .tk2l:before{content:"TATKAL";position:absolute;right:22px;top:44%;transform:translateY(-50%) rotate(-10deg);font:800 4.4rem var(--display);color:#ff8a1f;opacity:.07;pointer-events:none}
+/* cancelled */
+.tk2.cxl{filter:grayscale(.9);opacity:.82}
+.tk2.cxl .tk2l:before{content:"CANCELLED";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-14deg);font:800 4rem var(--display);color:#c0291d;opacity:.16;pointer-events:none;white-space:nowrap;right:auto}
+.tk2.cxl .stamp{color:#c0291d;border-color:#c0291d;background:#fdecea}
+.cxbtn{background:#fff;border:2px solid #f3b6b0;color:#c0291d;border-radius:12px;padding:8px 12px;font-weight:800;font-size:.78rem;cursor:pointer;transition:.15s}
+.cxbtn:hover{background:#c0291d;color:#fff;border-color:#c0291d}
+.cxd{background:#fdecea;border:2px solid #f3b6b0;color:#c0291d;border-radius:12px;padding:6px 10px;font-weight:800;font-size:.85rem;text-align:center}
+.cxd small{display:block;font-weight:600;color:#7a1d14;font-size:.68rem}
+.okb.cxb{background:linear-gradient(120deg,#6b1f1f,#c0291d);box-shadow:0 14px 32px #c0291d45}.okb.cxb .tick{color:#c0291d}
+.btn.red{background:linear-gradient(135deg,#ff6a5c,#c0291d);color:#fff;box-shadow:0 6px 18px #c0291d45}
+/* modal */
+.mdl{position:fixed;inset:0;background:#0b123899;backdrop-filter:blur(4px);z-index:100;display:grid;place-items:center;padding:16px;animation:fade .2s both}
+.mbox{background:#fff;border-radius:24px;padding:26px;max-width:480px;width:100%;box-shadow:0 30px 80px #0008;max-height:90vh;overflow:auto}
+.mbox h3{font-size:1.4rem;margin-bottom:6px}.mbox p{color:var(--mute);margin-bottom:12px}.mbox .sm{font-size:.82rem}
+.cxt{display:grid;gap:8px;margin:10px 0;max-height:34vh;overflow:auto}
+.cxr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;background:#f5f7ff;border:1px solid #e1e6ff;border-radius:14px;padding:10px 14px}
+.cxr b{grid-column:1}.cxr em{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-weight:800;color:#0c7a55;font-size:1.05rem}.cxr span{font-size:.78rem;color:var(--mute)}
+.note2{font-size:.82rem;background:#fff8e6;border:1px solid #f3dca0;border-radius:12px;padding:8px 12px;color:#7a5a00!important}
+.cxs{display:flex;justify-content:space-between;align-items:center;margin:12px 0;font-weight:800}.cxs b{font:800 1.6rem var(--display);color:#0c7a55}
+.mb{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:8px}
+.cxdone{width:64px;height:64px;border-radius:50%;background:#e8f8f1;color:#0c7a55;display:grid;place-items:center;font:800 2rem var(--display);margin-bottom:10px}
+/* cancel page */
+.cxwrap{display:grid;gap:22px;margin:-34px auto 90px;position:relative}
+.cprow{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}.cprow input{flex:1;min-width:200px;letter-spacing:.12em;font-weight:700}
+.bksum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;background:#fff;border:1px solid #e1e6ff;border-radius:20px;padding:18px 22px;box-shadow:0 10px 30px #3b4ef014}
+.bksum b{display:block;font:800 1.05rem var(--display)}
+.rh2{font-size:1.25rem;margin-bottom:12px}
+.rbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
+.rb{text-align:left;background:#fff;border:2px solid #e1e6ff;border-radius:18px;padding:14px 16px;cursor:pointer;display:grid;gap:3px;transition:.2s;color:var(--ink)}
+.rb:hover{border-color:#3b4ef0;transform:translateY(-3px);box-shadow:0 14px 30px #3b4ef022}
+.rb b{font:800 1.05rem var(--display)}.rb span{font-size:.8rem;color:var(--mute)}
+.st{justify-self:start;font-style:normal;font-weight:800;font-size:.7rem;border-radius:99px;padding:2px 10px}
+.st-a{background:#dff5ec;color:#0c7a55}.st-p{background:#fff0c2;color:#8a5a00}.st-c{background:#fde2df;color:#c0291d}
+/* about / help: colourful cards */
+.hc{--ac:#3b4ef0;--ac2:#7c5cff}
+.hc:nth-child(6n+2){--ac:#f59e0b;--ac2:#ffc933}
+.hc:nth-child(6n+3){--ac:#0ea371;--ac2:#34d399}
+.hc:nth-child(6n+4){--ac:#e0457b;--ac2:#ff86ae}
+.hc:nth-child(6n+5){--ac:#0891b2;--ac2:#4fd1ff}
+.hc:nth-child(6n){--ac:#8b5cf6;--ac2:#c084fc}
+.hc:nth-child(n){border-top:5px solid var(--ac);background:linear-gradient(#fff,color-mix(in srgb,var(--ac) 6%,#fff));border-color:color-mix(in srgb,var(--ac) 22%,#e3e8ff);border-top-color:var(--ac)}
+.hc:nth-child(n) .no{background:linear-gradient(135deg,var(--ac2),var(--ac));color:#fff;box-shadow:0 8px 16px color-mix(in srgb,var(--ac) 40%,transparent)}
+.hc:nth-child(n) li:before{background:var(--ac)}
+.hc:nth-child(n) h2{color:color-mix(in srgb,var(--ac) 55%,#0b1238)}
+.hc:hover{box-shadow:0 22px 46px color-mix(in srgb,var(--ac) 28%,transparent)}
+.hc.warn:nth-child(n){--ac:#e08a00;background:#fffaf0}
+.hc.imp:nth-child(n){--ac:#e4392b;--ac2:#ff6a5c;background:#fff4f3;border:2px solid #e4392b;border-top:7px solid #e4392b}
+.hc.imp:nth-child(n) h2{color:#c0291d}
+.prose{border-left:8px solid var(--yellow);background:linear-gradient(120deg,#fff,#f4f1ff)}
+.pagehead h1{text-shadow:0 6px 30px #7c5cff66}
+@media(max-width:820px){.cxr{grid-template-columns:1fr}.cxr em{grid-column:1;grid-row:auto}}
+@media print{.back,.mdl{display:none!important}}
+/* v12 */
+.pnrb{cursor:pointer;transition:transform .15s}.pnrb:hover{transform:scale(1.04)}.pnrb:active{transform:scale(.97)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#0b1238;color:#fff;font-weight:700;padding:10px 18px;border-radius:99px;z-index:120;box-shadow:0 12px 30px #0006;animation:fade .2s both}
+.cprow .btn.ghost2{padding:12px 18px}
+/* v13 */
+.backbar{position:sticky;top:var(--hh,100px);z-index:30;height:0;background:none;overflow:visible}
+.backbar .wrap{position:relative;height:0;padding:0 5vw}
+.back{position:absolute;left:5vw;top:10px;bottom:auto;background:rgba(11,18,56,.92);padding:9px 18px;box-shadow:0 8px 22px #0b123866}
+.hero{padding-top:58px}
+/* Tatkal ticket: ruby + gold (General stays indigo) */
+.tkt{border-color:#ffc9d3;box-shadow:0 22px 50px #a8123c33}
+.tkt .tk2h{background:linear-gradient(120deg,#3a0820,#a8123c 52%,#ff6a4d)}
+.tkt .tk2h:after{background:linear-gradient(90deg,#ffd166,#fff3c4,#ffb703,#fff3c4,#ffd166)}
+.tkt .qt{background:linear-gradient(135deg,#ffe29a,#ffc233);color:#4a0d2e;border-color:#ffd166}
+.tkt .rtx strong,.tkt .price,.tkt .ap{color:#b0123a}
+.tkt .mid i{border-top-color:#ff6a4d}
+.tkt .tk2r{background:linear-gradient(160deg,#fff0f3,#fff 55%,#ffe8cf)}
+.tkt .tk2f{background:#fff0f3}
+.tkt .tk2l:before{color:#ff6a4d}
+.tkt .trn b{color:#4a0d2e}
+a.cxbtn{display:inline-block;text-align:center;text-decoration:none}
+/* download page */
+.dlhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#fff;border:1px solid #e1e6ff;border-radius:20px;padding:14px 20px;box-shadow:0 10px 30px #3b4ef014}
+.dlhead b{color:var(--blue);font-size:1.2rem}
+.bkg{display:grid;gap:16px}
+/* cancel page */
+.cxcard{background:linear-gradient(#fff,#f9faff);border:1px solid #e1e6ff;border-radius:24px;padding:22px;box-shadow:0 14px 36px #3b4ef018;display:grid;gap:14px}
+.cxlist{display:grid;gap:10px}
+.cxrow{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:#f5f7ff;border:2px solid #e1e6ff;border-radius:16px;padding:12px 14px;cursor:pointer;margin:0;font-weight:400;transition:.15s}
+.cxrow:has(input:checked){border-color:#c0291d;background:#fff4f3}
+.cxrow input{width:22px;min-height:0;height:22px;padding:0;accent-color:#c0291d}
+.cxn b{display:block}.cxn small{color:var(--mute);font-size:.78rem}
+.cxrow em{font-style:normal;font-weight:800;color:var(--blue)}
+.cxsum{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:#fff4f3;border:1px solid #f3b6b0;border-radius:16px;padding:12px 16px;margin-top:8px;color:#7a1d14}
+.cxsum em{margin-left:auto;font-style:normal;font-weight:800;color:#c0291d}
+@media print{.backbar{display:none!important}}
 </style><meta name="theme-color" content="#0f1b3d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E"><title>Book Railway Ticket</title></head><body>
-<header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html" class="on">Book Ticket</a><a href="download.html">Download</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div>
+<header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html" class="on">Book Ticket</a><a href="download.html">Download</a><a href="cancel.html">Cancel</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div>
 <div class="pagehead"><div class="wrap"><h1>Book Railway Ticket</h1><p>Enter your journey and passenger details</p><div class="stepper" id="stp"><div class="sp on"><b>1</b>Journey</div><div class="sp"><b>2</b>Passengers</div><div class="sp"><b>3</b>Train &amp; Class</div><div class="sp"><b>4</b>Ticket</div></div></div></div>
 <div class="wrap"><form class="panel" id="f" novalidate>
 <div class="fg">
 <div><label for="from">From Station</label><input id="from" placeholder="Tap ▾ or type a station" autocomplete="off"></div>
 <div><label for="to">To Station</label><input id="to" placeholder="Tap ▾ or type a station" autocomplete="off"></div>
-<div><label for="date">Journey Date</label><input type="date" id="date"></div>
+<div><label for="date">Journey Date</label><input type="date" id="date"><small class="hint" id="dhint"></small></div>
 <div><label for="n">Number of Passengers</label><input type="number" id="n" min="1" max="100" value="1"><small class="aerr" id="nerr"></small></div>
 <div><label for="quota">Ticket Type</label><select id="quota"><option>General</option><option>Tatkal</option></select></div></div>
 <div id="paxBox"></div>
@@ -441,24 +549,66 @@ input:hover,select:hover{border-color:#b9c4ff}
 <button class="btn blue">Search &amp; Book Train</button></form>
 <div id="trains"></div><div id="tickets"></div></div>
 <footer><b>Railway Ticket Booking Simulation</b>B.Tech First Year Mini Project<br>Designed &amp; Developed by: <em>Pankaj Ahirwar</em></footer><script>
+(()=>{let r=false;try{const n=performance.getEntriesByType("navigation")[0];r=n?n.type==="reload":!!(performance.navigation&&performance.navigation.type===1)}catch(e){}
+if(r){try{sessionStorage.removeItem("rtb_all")}catch(e){}try{localStorage.removeItem("rtb_all");localStorage.removeItem("rtb_last")}catch(e){}try{if(String(window.name).startsWith("RTB1:"))window.name=""}catch(e){}}})();
+ 
 const $=i=>document.getElementById(i);
 const E=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const apm=s=>E(s).replace(/ (AM|PM)$/,' <small class="ap">$1</small>');
 const rs=x=>"₹"+Number(x).toLocaleString("en-IN");
-const bars=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,33)+c.charCodeAt(0))>>>0;let o="";for(let i=0;i<38;i++){h=(Math.imul(h,1664525)+1013904223)>>>0;o+=`<span style="width:${1+(h>>>16)%4}px;margin-right:${1+(h>>>20)%3}px"></span>`}return o};
-const qr=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,31)+c.charCodeAt(0))>>>0;const N=25,m=[];for(let y=0;y<N;y++){m[y]=[];for(let x=0;x<N;x++){h=(Math.imul(h,1664525)+1013904223)>>>0;m[y][x]=(h>>>24)&1}}
- const fp=(ox,oy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const X=ox+x,Y=oy+y;if(X<0||Y<0||X>=N||Y>=N)continue;const e=x>=0&&x<7&&y>=0&&y<7;m[Y][X]=e&&(x==0||y==0||x==6||y==6||(x>=2&&x<=4&&y>=2&&y<=4))?1:0}};fp(0,0);fp(N-7,0);fp(0,N-7);
- let r="";for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(m[y][x])r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;return`<svg class="qr" viewBox="0 0 ${N} ${N}" aria-hidden="true">${r}</svg>`};
-const bannerHTML=X=>{const n=X.pax.length,wl=X.pax.filter(p=>!p.ok).length,t=wl==0?"Ticket Booked Successfully!":wl==n?"Ticket Booked - Waiting List":"Ticket Booked - "+(n-wl)+" Confirmed, "+wl+" Waiting";
- return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==n?"!":"✓"}</div><div class="oi"><b>${t}</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${n} passenger${n>1?"s":""} · ${E(X.q)}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(X.pax.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
-const tkHTML=X=>X.pax.map(p=>`<article class="tk2 ${p.ok?"cnf":"wl"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small></div><div class="pnrb"><small>PNR NUMBER</small><b>${E(X.pnr)}</b></div></div>
+const barA=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,33)+c.charCodeAt(0))>>>0;const o=[];for(let i=0;i<38;i++){h=(Math.imul(h,1664525)+1013904223)>>>0;o.push([1+(h>>>16)%4,1+(h>>>20)%3])}return o};
+const bars=s=>barA(s).map(([w,m])=>`<span style="width:${w}px;margin-right:${m}px"></span>`).join("");
+const qrM=s=>{let h=0;for(const c of String(s))h=(Math.imul(h,31)+c.charCodeAt(0))>>>0;const N=25,m=[];for(let y=0;y<N;y++){m[y]=[];for(let x=0;x<N;x++){h=(Math.imul(h,1664525)+1013904223)>>>0;m[y][x]=(h>>>24)&1}}
+ const fp=(ox,oy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const X=ox+x,Y=oy+y;if(X<0||Y<0||X>=N||Y>=N)continue;const e=x>=0&&x<7&&y>=0&&y<7;m[Y][X]=e&&(x==0||y==0||x==6||y==6||(x>=2&&x<=4&&y>=2&&y<=4))?1:0}};fp(0,0);fp(N-7,0);fp(0,N-7);return m};
+const qr=s=>{const m=qrM(s),N=25;let r="";for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(m[y][x])r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;return`<svg class="qr" viewBox="0 0 ${N} ${N}" aria-hidden="true">${r}</svg>`};
+/* ---------- tickets live only for this browser tab; a page refresh clears them ---------- */
+const WN="RTB1:",MEM={all:[]};
+const getAll=()=>{try{const r=sessionStorage.getItem("rtb_all");if(r)return JSON.parse(r)}catch(e){}try{if(String(window.name).startsWith(WN))return JSON.parse(window.name.slice(WN.length))}catch(e){}return MEM.all};
+const setAll=a=>{MEM.all=a;const j=JSON.stringify(a);try{sessionStorage.setItem("rtb_all",j)}catch(e){}try{if(!window.name||String(window.name).startsWith(WN))window.name=WN+j}catch(e){}};
+const saveBk=X=>{const a=getAll().filter(b=>b.pnr!=X.pnr);a.unshift(X);setAll(a.slice(0,60))};
+const findBk=p=>getAll().find(b=>b.pnr==p);
+const idxOf=(X,cx)=>X.pax.map((p,i)=>i).filter(i=>cx?!!X.pax[i].cx:!X.pax[i].cx);
+const activeList=()=>getAll().map(X=>({X,idx:idxOf(X,false)})).filter(b=>b.idx.length);
+const cancelledList=()=>getAll().map(X=>({X,idx:idxOf(X,true)})).filter(b=>b.idx.length);
+const sub=(X,idx)=>({...X,pax:idx.map(i=>({...X.pax[i],_i:i}))});
+const FLAT={SL:120,"2S":60,"3A":180,"3E":180,CC:180,"2A":200,"1A":240,EC:240};
+const depTs=X=>new Date(X.iso+"T00:00:00").getTime()+(X.dm||0)*60000;
+function refund(X,p){const fare=p.fare??X.fr,h=X.iso?(depTs(X)-Date.now())/36e5:999;
+ if(h<=0)return{ok:false,msg:"The train has already departed, so this ticket cannot be cancelled."};
+ if(!p.ok){const c=Math.min(20,fare);return{ok:true,fare,charge:c,refund:fare-c,note:"Waiting list ticket: full refund minus Rs. 20."}}
+ if(X.q=="Tatkal")return{ok:true,fare,charge:fare,refund:0,note:"Tatkal tickets are non-refundable."};
+ const flat=Math.min(p.half?Math.round((FLAT[X.k]||120)/2):(FLAT[X.k]||120),fare);let c,note;
+ if(h>48){c=flat;note="More than 48 hours before departure: fixed cancellation charge."}
+ else if(h>12){c=Math.max(flat,Math.round(fare*.25));note="12 to 48 hours before departure: 25% of the fare is deducted."}
+ else if(h>=4){c=Math.max(flat,Math.round(fare*.5));note="4 to 12 hours before departure: 50% of the fare is deducted."}
+ else{c=fare;note="Less than 4 hours before departure: no refund."}
+ c=Math.min(c,fare);return{ok:true,fare,charge:c,refund:fare-c,note}}
+function applyCancel(pnr,idx){const a=getAll(),X=a.find(b=>b.pnr==pnr);if(!X)return null;
+ idx.forEach(i=>{const p=X.pax[i];if(p&&!p.cx){const r=refund(X,p);if(r.ok)p.cx={at:Date.now(),charge:r.charge,refund:r.refund}}});
+ setAll(a);window.dispatchEvent(new CustomEvent("rtb-updated",{detail:X}));return X}
+const POP=h=>{const d=document.createElement("div");d.className="mdl";d.innerHTML=`<div class="mbox">${h}</div>`;d.onclick=e=>{if(e.target==d||e.target.closest("[data-close]"))d.remove()};document.body.appendChild(d);return d};
+function cxModal(X,idx){const rows=idx.map(i=>({p:X.pax[i],r:refund(X,X.pax[i])}));
+ if(!rows.length)return POP(`<h3>Nothing to cancel</h3><p>All tickets in this booking are already cancelled.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
+ const bad=rows.find(x=>!x.r.ok);
+ if(bad)return POP(`<h3>Cannot cancel</h3><p>${E(bad.r.msg)}</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
+ const tot=rows.reduce((s,x)=>s+x.r.refund,0),notes=[...new Set(rows.map(x=>x.r.note))].join(" ");
+ const d=POP(`<h3>Cancel ${rows.length>1?rows.length+" tickets":"ticket"}?</h3><p class="sm">PNR ${E(X.pnr)} · ${E(X.an)} → ${E(X.bn)} · ${E(X.dd)}</p><div class="cxt">${rows.map(x=>`<div class="cxr"><b>${E(x.p.name)}</b><span>Fare ${rs(x.r.fare)} · Charge ${rs(x.r.charge)}</span><em>Refund ${rs(x.r.refund)}</em></div>`).join("")}</div><p class="note2">${E(notes)}</p><div class="cxs"><span>TOTAL REFUND</span><b>${rs(tot)}</b></div><div class="mb"><button type="button" class="btn ghost2" data-close>Keep Ticket</button><button type="button" class="btn red" id="cxok">Yes, Cancel</button></div>`);
+ d.querySelector("#cxok").onclick=()=>{applyCancel(X.pnr,idx);d.remove();POP(`<div class="cxdone">✓</div><h3>Ticket cancelled</h3><p>Refund of <b>${rs(tot)}</b> will be credited in 5-7 working days (simulation). The cancelled ticket now appears on the Cancel page.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`)}}
+/* ---------- rendering ---------- */
+const bannerHTML=X=>{const n=X.pax.length,cx=X.pax.filter(p=>p.cx).length,act=X.pax.filter(p=>!p.cx),wl=act.filter(p=>!p.ok).length,ref=X.pax.reduce((s,p)=>s+(p.cx?p.cx.refund:0),0);
+ if(cx==n)return `<div class="okb cxb"><div class="tick">✕</div><div class="oi"><b>Ticket Cancelled</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${n} passenger${n>1?"s":""} · refund will be credited in 5-7 working days (simulation)</span></div><div class="tot"><small>TOTAL REFUND</small><b>${rs(ref)}</b></div></div>`;
+ const t=wl==0?"Ticket Booked Successfully!":wl==act.length?"Ticket Booked - Waiting List":"Ticket Booked - "+(act.length-wl)+" Confirmed, "+wl+" Waiting";
+ return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==act.length?"!":"✓"}</div><div class="oi"><b>${t}</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${act.length} passenger${act.length>1?"s":""} · ${E(X.q)}${cx?" · "+cx+" cancelled (refund "+rs(ref)+")":""}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(act.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
+const tkHTML=X=>X.pax.map((p,i)=>{const oi=p._i??i;return`<article class="tk2 ${p.cx?"cxl":p.ok?"cnf":"wl"} ${X.q=="Tatkal"?"tkt":"tkg"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small><span class="qt">${X.q=="Tatkal"?"⚡ TATKAL":"GENERAL"}</span></div><div class="pnrb" data-copy="${E(X.pnr)}" title="Tap to copy PNR"><small>PNR NUMBER</small><b>${E(X.pnr)}</b></div></div>
 <div class="tk2b"><div class="tk2l"><div class="tkid">TICKET ID ${E(p.tid)}</div><div class="trn"><b>${E(X.tn)}</b><span>#${E(X.tno)} · ${E(X.ty)}</span></div>
 <div class="rtx"><div><strong>${E(X.a)}</strong><span>${E(X.an)}</span><small>DEPARTS</small><em>${apm(X.dep)}</em><span>${E(X.dd)}</span></div><div class="mid"><i></i><span>${E(X.dist)} km</span><span>⏱ ${E(X.dur)}</span></div><div class="r"><strong>${E(X.b)}</strong><span>${E(X.bn)}</span><small>ARRIVES</small><em>${apm(X.arr)}</em><span>${E(X.ad)}</span></div></div>
 <div class="dg2"><div><span class="lab">PASSENGER</span><b>${E(p.name)}</b></div><div><span class="lab">AGE / GENDER</span><b>${E(p.age)} / ${E(p.g)}</b></div><div><span class="lab">CLASS</span><b>${E(X.cn)} (${E(X.k)})</b></div><div><span class="lab">QUOTA</span><b>${E(X.q)}</b></div>
 <div><span class="lab">SEAT NO.</span><b>${E(p.seat)}</b></div><div><span class="lab">BERTH / SEAT TYPE</span><b>${E(p.bt)}</b></div><div><span class="lab">JOURNEY DATE</span><b>${E(X.dd)}</b></div><div><span class="lab">TICKET TYPE</span><b>${p.half?"Half Ticket (Child)":"Full Ticket"}</b></div></div></div>
-<div class="tk2r"><div class="stamp">${E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(X.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div></div></div>
-<div class="tk2f">Simulation ticket · for learning purposes only · Have a safe journey 🚂</div></article>`).join("");
+<div class="tk2r"><div class="stamp">${p.cx?"CANCELLED":E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(X.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div>${p.cx?`<div class="cxd">Refund ${rs(p.cx.refund)}<small>Charge ${rs(p.cx.charge)}</small></div>`:`<a class="cxbtn" href="cancel.html#p=${E(X.pnr)}&amp;i=${oi}" data-go="cancel" data-p="${E(X.pnr)}" data-i="${oi}">✕ Cancel Ticket</a>`}</div></div>
+<div class="tk2f">Simulation ticket · for learning purposes only · Have a safe journey 🚂</div></article>`}).join("");
 const confetti=()=>{if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const C=["#ffc72c","#7c5cff","#3b4ef0","#2fe39a","#ff6a5c","#ffffff"];for(let i=0;i<70;i++){const e=document.createElement("i");e.className="cf";e.style.left=Math.random()*100+"vw";e.style.background=C[i%6];e.style.setProperty("--dx",(Math.random()*200-100)+"px");e.style.animationDelay=Math.random()*.5+"s";e.style.animationDuration=(1.8+Math.random()*1.4)+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4300)}};
+const TOAST=m=>{const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1900)};
+document.addEventListener("click",e=>{const c=e.target.closest("[data-copy]");if(!c)return;const v=c.dataset.copy;try{navigator.clipboard.writeText(v).then(()=>TOAST("PNR "+v+" copied"),()=>TOAST("PNR "+v))}catch(x){TOAST("PNR "+v)}});
  
  
  
@@ -495,7 +645,9 @@ function seat(c,pref,used){const K=CL[c],kd=KIND[K.b],ty=n=>kd[(n-1)%kd.length],
  for(let n=1;n<=K.z;n++)if(!used.has(n)&&m(n))p.push(n);
  if(!p.length)for(let n=1;n<=K.z;n++)if(!used.has(n))p.push(n);
  const n=p[Math.floor(Math.random()*p.length)];used.add(n);return[n,ty(n)+(w&&K.b!="st"?" (Window)":"")]}
-function avail(t,c,dt,q){let h=0;for(const ch of t.no+c+dt+q)h=(h*31+ch.charCodeAt(0))>>>0;const n=h>>>8,ok=q=="Tatkal"||!(c=="SL"||c=="2S")||h%100<71;return ok?{k:"AVL",n:10+n%50}:{k:"WL",n:1+n%40}}
+function avail(t,c,dt,q){let h=0;for(const ch of String(t.no)+dt)h=(h*31+ch.charCodeAt(0))>>>0;const n=t.cls.length,i1=h%n,w=1+((h>>>7)%2),i2=(i1+1+((h>>>11)%Math.max(1,n-1)))%n;
+ const wl=q!="Tatkal"&&(t.cls[i1]==c||(w==2&&n>1&&t.cls[i2]==c));let g=0;for(const ch of String(t.no)+c+dt+q)g=(g*31+ch.charCodeAt(0))>>>0;
+ return wl?{k:"WL",n:1+(g>>>8)%40}:{k:"AVL",n:10+(g>>>8)%50}}
 function ac(id){const i=$(id),w=i.parentNode,l=document.createElement("div"),cb=document.createElement("button");w.classList.add("acw");l.className="acl";cb.type="button";cb.className="caret";cb.setAttribute("aria-label","Show all stations");cb.textContent="▾";w.appendChild(cb);w.appendChild(l);
  const all=Object.keys(ST).sort((x,y)=>ST[x].n.localeCompare(ST[y].n));
  const pick=c=>{i.value=lab(c);l.style.display="none"};
@@ -507,12 +659,12 @@ function ac(id){const i=$(id),w=i.parentNode,l=document.createElement("div"),cb=
  l.onclick=e=>{const d=e.target.closest(".it");if(d)pick(d.dataset.c)};
  i.onkeydown=e=>{if(e.key=="Enter"&&l.style.display=="block"){const d=l.querySelector(".it");if(d){e.preventDefault();pick(d.dataset.c)}}if(e.key=="Escape")l.style.display="none"};
  document.addEventListener("click",e=>{if(!w.contains(e.target))l.style.display="none"})}
-const goDl=X=>{const j=JSON.stringify(X);try{localStorage.setItem("rtb_last",j)}catch(e){}if(window.RTB_GO)return window.RTB_GO("download",X);location.href="download.html"+(j.length<6000?"#d="+encodeURIComponent(btoa(unescape(encodeURIComponent(j)))):"")};
 if(f){
- const d0=new Date();$("date").min=$("date").value=d0.getFullYear()+"-"+String(d0.getMonth()+1).padStart(2,"0")+"-"+String(d0.getDate()).padStart(2,"0");
+ const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"),addD=n=>{const d=new Date();d.setDate(d.getDate()+n);return ymd(d)};
+ const setDates=()=>{const t=$("quota").value=="Tatkal",el=$("date");if(t){el.min=addD(0);el.max=addD(1)}else{el.min=addD(2);el.max=addD(120)}if(!el.value||el.value<el.min||el.value>el.max)el.value=el.min;$("dhint").textContent=t?"Tatkal: only today or tomorrow":"General: from the day after tomorrow"};setDates();
  ac("from");ac("to");let Q,L,S;
  const stp=n=>document.querySelectorAll("#stp .sp").forEach((e,i)=>{e.classList.toggle("done",i<n-1);e.classList.toggle("on",i==n-1)});
- const clr=()=>{$("trains").innerHTML=$("tickets").innerHTML="";stp(1)};
+ const clr=()=>{$("trains").innerHTML=$("tickets").innerHTML="";$("tickets").dataset.pnr="";stp(1)};
  window.fillRoute=(a,b)=>{if(ST[a]&&ST[b]){$("from").value=lab(a);$("to").value=lab(b);clr()}};const mr=location.hash.match(/r=([A-Z]+)-([A-Z]+)/);if(mr)fillRoute(mr[1],mr[2]);
  const dtf=(d,o)=>new Date(new Date(d).getTime()+(o||0)*864e5).toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"});
  function agebind(d){const ai=d.querySelector(".pa"),ae=d.querySelector(".aerr");ai.oninput=()=>{let v=ai.value.replace(/\D/g,"").slice(0,3);if(+v>100){v=v.slice(0,2);ae.textContent="Maximum age allowed is 100";clearTimeout(ai._t);ai._t=setTimeout(()=>ae.textContent="",2800)}else ae.textContent="";if(v!=ai.value)ai.value=v;if(window.refreshFare)refreshFare()}}
@@ -520,13 +672,14 @@ if(f){
   while(b.children.length>n)b.lastChild.remove();
   while(b.children.length<n){const d=document.createElement("div");d.className="pax";
    d.innerHTML=`<div class="pt">Passenger ${b.children.length+1}</div><div><label>Name</label><input class="pn" placeholder="Full name"></div><div><label>Age</label><input class="pa" type="text" inputmode="numeric" maxlength="3" placeholder="Age (1-100)" autocomplete="off"><small class="aerr"></small></div><div><label>Gender</label><select class="pg"><option>Male</option><option>Female</option><option>Other</option></select></div>`;b.appendChild(d);agebind(d)}}
- pax();$("n").oninput=()=>{const v=+$("n").value;if(v>MAXP){$("n").value=MAXP;$("nerr").textContent="Maximum "+MAXP+" passengers per booking";setTimeout(()=>$("nerr").textContent="",2800)}else if(v<0)$("n").value=1;pax();clr()};$("quota").onchange=clr;
+ pax();$("n").oninput=()=>{const v=+$("n").value;if(v>MAXP){$("n").value=MAXP;$("nerr").textContent="Maximum "+MAXP+" passengers per booking";setTimeout(()=>$("nerr").textContent="",2800)}else if(v<0)$("n").value=1;pax();clr()};$("quota").onchange=()=>{setDates();clr()};
  const need=()=>{const ns=[...document.querySelectorAll(".pn")],as=[...document.querySelectorAll(".pa")];for(let j=0;j<ns.length;j++){if(!ns[j].value.trim()){ns[j].focus();return"Please enter name and age of every passenger."}const a=+as[j].value;if(!(a>=1&&a<=100)){as[j].focus();return a>100?"Passenger age cannot be more than 100.":"Please enter a valid age (1 to 100) for every passenger."}}return""};
  f.onsubmit=e=>{e.preventDefault();const a=code($("from").value),b=code($("to").value),dt=$("date").value,n=Math.min(MAXP,Math.max(1,+$("n").value||1)),er=$("err");clr();
   const bad=m=>{er.textContent=m;er.scrollIntoView({behavior:"smooth",block:"center"})};
   if(!a||!b)return bad("Station not found. Type a city like Delhi, Mumbai or Lucknow and pick from the list.");
   if(a==b)return bad("From and To stations must be different.");
   if(!dt)return bad("Please select the journey date.");
+  {const el=$("date");if(dt<el.min||dt>el.max)return bad($("quota").value=="Tatkal"?"Tatkal tickets can be booked only for today and tomorrow. For later dates please choose General.":"General tickets can be booked from the day after tomorrow. For today or tomorrow please choose Tatkal.")}
   const m1=need();if(m1)return bad(m1);
   $("from").value=lab(a);$("to").value=lab(b);er.textContent="";Q={a,b,dt,n,q:$("quota").value};L=find(a,b);
   $("trains").innerHTML=`<div class="rh"><h2>${ST[a].n} → ${ST[b].n}</h2><span class="lab">${L.length} TRAINS · ${dtf(dt)} · ${Q.q.toUpperCase()} · ${n} PASSENGER${n>1?"S":""}</span></div>`+L.map((t,i)=>`<article class="tr"><div class="trh"><span class="ty">${TY[t.ty].l}</span><b>${t.name}</b><span class="lab">#${t.no}</span></div>
@@ -544,21 +697,22 @@ if(f){
   <div class="err" id="err2" role="alert"></div><button type="button" class="btn blue" id="conf">Book Ticket</button></div>`);
   if($("pall"))$("pall").onchange=e=>{if(e.target.value)document.querySelectorAll(".pb").forEach(s=>s.value=e.target.value)};
   document.querySelector(".bkp").scrollIntoView({behavior:"smooth",block:"center"});$("conf").onclick=book};
+ const renderBooked=X=>{$("tickets").dataset.pnr=X.pnr;$("tickets").innerHTML=bannerHTML(X)+`<div class="dlbar"><a class="btn" href="download.html" data-go="download">🎟 View &amp; Download Ticket</a></div><span class="hint">Your ticket is saved on the Download page. Cancelled tickets are shown on the Cancel page.</span>`};
  function book(){const m0=need();if(m0){$("err2").textContent=m0;return f.scrollIntoView({behavior:"smooth"})}
   const nm=[...document.querySelectorAll(".pn")],ag=[...document.querySelectorAll(".pa")],gn=[...document.querySelectorAll(".pg")],pb=[...document.querySelectorAll(".pb")],{t,k,fr,st}=S;
-  const always=Q.q=="Tatkal"||!(k=="SL"||k=="2S");let cn=1+Math.floor(Math.random()*4),used=new Set();
+  const always=Q.q=="Tatkal"||(st.k=="AVL"&&!(k=="SL"||k=="2S"));let cn=1+Math.floor(Math.random()*4),used=new Set();
   const pax=nm.map((x,i)=>{let ok=true,w=0;if(always)ok=true;else if(st.k=="AVL"){ok=i<st.n;w=i-st.n+1}else{ok=false;w=st.n+i}
    let seatT="Not allotted",bt="-";if(ok){if(used.size>=CL[k].z){cn++;used=new Set()}const[n,bb]=seat(k,pb[i].value,used);seatT=CL[k].p+cn+"-"+String(n).padStart(2,"0");bt=bb}
    return{name:x.value.trim(),age:ag[i].value,half:+ag[i].value<10,fare:+ag[i].value<10?Math.round(fr/2):fr,g:gn[i].value,ok,lab:ok?"CONFIRMED":"WAITLIST "+w,seat:seatT,bt,tid:"TKT"+Math.floor(1e7+Math.random()*9e7)}});
-  const X={pnr:String(Math.floor(1e9+Math.random()*9e9)),tn:t.name,tno:t.no,ty:TY[t.ty].l,a:Q.a,b:Q.b,an:ST[Q.a].n,bn:ST[Q.b].n,dist:t.dist,dep:fm(t.dep),arr:fm(t.arr),dd:dtf(Q.dt),ad:dtf(Q.dt,Math.floor(t.arr/1440)),dur:dur(t.arr-t.dep),k,cn:CL[k].n,q:Q.q,fr,pax};
-  try{localStorage.setItem("rtb_last",JSON.stringify(X))}catch(e){}
-  $("tickets").innerHTML=bannerHTML(X)+`<div class="dlbar"><button type="button" class="btn" id="godl">⬇ Download Ticket</button></div>`+tkHTML(X);
-  $("godl").onclick=()=>goDl(X);stp(4);if(pax.some(p=>p.ok))confetti();$("tickets").scrollIntoView({behavior:"smooth"})}
+  const X={pnr:String(Math.floor(1e9+Math.random()*9e9)),tn:t.name,tno:t.no,ty:TY[t.ty].l,a:Q.a,b:Q.b,an:ST[Q.a].n,bn:ST[Q.b].n,dist:t.dist,dep:fm(t.dep),arr:fm(t.arr),dd:dtf(Q.dt),ad:dtf(Q.dt,Math.floor(t.arr/1440)),dur:dur(t.arr-t.dep),k,cn:CL[k].n,q:Q.q,fr,pax,iso:Q.dt,dm:t.dep};
+  saveBk(X);
+  renderBooked(X);stp(4);if(pax.some(p=>p.ok))confetti();$("tickets").scrollIntoView({behavior:"smooth"})}
 }
  
 document.querySelectorAll(".back").forEach(b=>{b.onclick=()=>{history.length>1?history.back():location.href="index.html"};if(history.length<2&&b.dataset.home)b.style.display="none"});
 if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".card,.step,.stat,.band,.cta,.rc,.board,.hc:not(.imp)").forEach(x=>{x.classList.add("rv");io.observe(x)})}
 document.querySelectorAll("[data-count]").forEach(el=>{const n=+el.dataset.count,sf=el.dataset.suf||"",run=()=>{let t0=null;const st=ts=>{t0=t0||ts;const p=Math.min(1,(ts-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+sf;if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)};if("IntersectionObserver"in window){el.textContent="0"+sf;const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){run();o.disconnect()}});o.observe(el)}});
 (()=>{const sp=document.createElement("div");sp.id="sp";document.body.appendChild(sp);const u=()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;sp.style.width=(m>0?h.scrollTop/m*100:0)+"%"};addEventListener("scroll",u,{passive:true});u();const hero=document.querySelector(".hero");if(hero&&matchMedia("(hover:hover)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")})})();
+(()=>{const h=document.querySelector("header");if(!h)return;const set=()=>document.documentElement.style.setProperty("--hh",h.getBoundingClientRect().height+"px");set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(h);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
  
 </script></body></html>
