@@ -534,6 +534,45 @@ a.cxbtn{display:inline-block;text-align:center;text-decoration:none}
 .cxsum{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:#fff4f3;border:1px solid #f3b6b0;border-radius:16px;padding:12px 16px;margin-top:8px;color:#7a1d14}
 .cxsum em{margin-left:auto;font-style:normal;font-weight:800;color:#c0291d}
 @media print{.backbar{display:none!important}}
+.cxrow.one{grid-template-columns:1fr auto;cursor:default}
+/* v14: stable on every phone */
+html{overflow-x:visible}
+body{overflow-x:clip;background:linear-gradient(180deg,#f3f5ff,#e9eeff)}
+body:before{display:none}
+header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#0d1540}
+.back,.hstats,.mdl{-webkit-backdrop-filter:none;backdrop-filter:none}
+.mdl{background:rgba(11,18,56,.72)}
+#sp{width:100%;transform-origin:0 50%;transform:scaleX(0);transition:none}
+.rv{opacity:1!important;transform:none!important;transition:none!important}
+.card,.stat,.step,.hc,.tr,.tk2,.rc{animation:up .5s ease-out backwards}
+img,svg,video,canvas{max-width:100%}
+.wrap,.panel,.hc,.card,.tk2,.tr,.okb,.cxcard,.dlhead{min-width:0;max-width:100%}
+.hc p,.hc li,.hc h2,.hc b,.tk2 b,.tk2 span,.okb span{overflow-wrap:anywhere}
+/* Help / About grid can never grow wider than the screen */
+.hg{grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.hg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.hc{--ac:#3b4ef0;--ac2:#7c5cff;--tint:#f5f6ff;--hd:#2a35c8;--bd:#d9defc}
+.hc:nth-child(6n+2){--ac:#f59e0b;--ac2:#ffc933;--tint:#fffaf0;--hd:#8a5a00;--bd:#f6e2b5}
+.hc:nth-child(6n+3){--ac:#0ea371;--ac2:#34d399;--tint:#f2fbf7;--hd:#0b6b4b;--bd:#c9eedd}
+.hc:nth-child(6n+4){--ac:#e0457b;--ac2:#ff86ae;--tint:#fff4f8;--hd:#9c1f4e;--bd:#f7cddc}
+.hc:nth-child(6n+5){--ac:#0891b2;--ac2:#4fd1ff;--tint:#f1fbfe;--hd:#066079;--bd:#c4eaf4}
+.hc:nth-child(6n){--ac:#8b5cf6;--ac2:#c084fc;--tint:#f8f5ff;--hd:#5b34b5;--bd:#e0d4fb}
+.hc:nth-child(n){background:linear-gradient(#fff,var(--tint));border:1px solid var(--bd);border-top:5px solid var(--ac)}
+.hc:nth-child(n) h2{color:var(--hd)}
+.hc:nth-child(n) .no{background:linear-gradient(135deg,var(--ac2),var(--ac));color:#fff;box-shadow:0 8px 16px rgba(11,18,56,.16)}
+.hc.warn:nth-child(n){--ac:#e08a00;background:#fffaf0;border-color:#f0d8a8;border-top:5px solid #e08a00}
+.hc.imp:nth-child(n){background:#fff4f3;border:2px solid #e4392b;border-top:7px solid #e4392b}
+.hc.imp:nth-child(n) h2{color:#c0291d}
+@media(hover:hover){.hc:hover{box-shadow:0 18px 40px rgba(59,78,240,.18)}}
+@media(hover:none),(max-width:820px){.btn:after,.tk2h:before{display:none}.hero h1 b{animation:none}}
+@media(max-width:380px){.wrap{padding:0 4vw}.panel{padding:18px}.hc{padding:18px}.hh{gap:10px}.no{flex-basis:38px;width:38px;height:38px;font-size:1rem}}
+@media(max-width:340px){.tk2l,.tk2r{padding:16px 14px}.rtx strong{font-size:1.4rem}.dg2{gap:10px}}
+/* short pages: footer always sits at the bottom of the screen, never in the middle */
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body>.wrap{margin-top:0;margin-bottom:0}
+body>footer{margin-top:auto}
+body>main.view.on{flex:1 0 auto}
+body>header,body>.backbar,body>.pagehead,body>.hero{flex:0 0 auto}
 </style><meta name="theme-color" content="#0f1b3d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E"><title>Book Railway Ticket</title></head><body>
 <header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html">Home</a><a href="booking.html" class="on">Book Ticket</a><a href="download.html">Download</a><a href="cancel.html">Cancel</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back">← Back</button></div></div>
 <div class="pagehead"><div class="wrap"><h1>Book Railway Ticket</h1><p>Enter your journey and passenger details</p><div class="stepper" id="stp"><div class="sp on"><b>1</b>Journey</div><div class="sp"><b>2</b>Passengers</div><div class="sp"><b>3</b>Train &amp; Class</div><div class="sp"><b>4</b>Ticket</div></div></div></div>
@@ -565,8 +604,11 @@ const qr=s=>{const m=qrM(s),N=25;let r="";for(let y=0;y<N;y++)for(let x=0;x<N;x+
 const WN="RTB1:",MEM={all:[]};
 const getAll=()=>{try{const r=sessionStorage.getItem("rtb_all");if(r)return JSON.parse(r)}catch(e){}try{if(String(window.name).startsWith(WN))return JSON.parse(window.name.slice(WN.length))}catch(e){}return MEM.all};
 const setAll=a=>{MEM.all=a;const j=JSON.stringify(a);try{sessionStorage.setItem("rtb_all",j)}catch(e){}try{if(!window.name||String(window.name).startsWith(WN))window.name=WN+j}catch(e){}};
-const saveBk=X=>{const a=getAll().filter(b=>b.pnr!=X.pnr);a.unshift(X);setAll(a.slice(0,60))};
-const findBk=p=>getAll().find(b=>b.pnr==p);
+const saveBk=X=>{const a=getAll().filter(b=>b.bid!=X.bid);a.unshift(X);setAll(a.slice(0,60))};
+const findBk=id=>getAll().find(b=>b.bid==id);
+const findPax=pnr=>{for(const X of getAll()){const i=X.pax.findIndex(p=>p.pnr==pnr);if(i>=0)return{X,i}}return null};
+const allPnrs=()=>new Set(getAll().flatMap(X=>X.pax.map(p=>p.pnr)));
+const newPnr=taken=>{let s;do{s=String(1000000000+Math.floor(Math.random()*9000000000))}while(taken.has(s));taken.add(s);return s};
 const idxOf=(X,cx)=>X.pax.map((p,i)=>i).filter(i=>cx?!!X.pax[i].cx:!X.pax[i].cx);
 const activeList=()=>getAll().map(X=>({X,idx:idxOf(X,false)})).filter(b=>b.idx.length);
 const cancelledList=()=>getAll().map(X=>({X,idx:idxOf(X,true)})).filter(b=>b.idx.length);
@@ -583,7 +625,7 @@ function refund(X,p){const fare=p.fare??X.fr,h=X.iso?(depTs(X)-Date.now())/36e5:
  else if(h>=4){c=Math.max(flat,Math.round(fare*.5));note="4 to 12 hours before departure: 50% of the fare is deducted."}
  else{c=fare;note="Less than 4 hours before departure: no refund."}
  c=Math.min(c,fare);return{ok:true,fare,charge:c,refund:fare-c,note}}
-function applyCancel(pnr,idx){const a=getAll(),X=a.find(b=>b.pnr==pnr);if(!X)return null;
+function applyCancel(bid,idx){const a=getAll(),X=a.find(b=>b.bid==bid);if(!X)return null;
  idx.forEach(i=>{const p=X.pax[i];if(p&&!p.cx){const r=refund(X,p);if(r.ok)p.cx={at:Date.now(),charge:r.charge,refund:r.refund}}});
  setAll(a);window.dispatchEvent(new CustomEvent("rtb-updated",{detail:X}));return X}
 const POP=h=>{const d=document.createElement("div");d.className="mdl";d.innerHTML=`<div class="mbox">${h}</div>`;d.onclick=e=>{if(e.target==d||e.target.closest("[data-close]"))d.remove()};document.body.appendChild(d);return d};
@@ -592,19 +634,20 @@ function cxModal(X,idx){const rows=idx.map(i=>({p:X.pax[i],r:refund(X,X.pax[i])}
  const bad=rows.find(x=>!x.r.ok);
  if(bad)return POP(`<h3>Cannot cancel</h3><p>${E(bad.r.msg)}</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`);
  const tot=rows.reduce((s,x)=>s+x.r.refund,0),notes=[...new Set(rows.map(x=>x.r.note))].join(" ");
- const d=POP(`<h3>Cancel ${rows.length>1?rows.length+" tickets":"ticket"}?</h3><p class="sm">PNR ${E(X.pnr)} · ${E(X.an)} → ${E(X.bn)} · ${E(X.dd)}</p><div class="cxt">${rows.map(x=>`<div class="cxr"><b>${E(x.p.name)}</b><span>Fare ${rs(x.r.fare)} · Charge ${rs(x.r.charge)}</span><em>Refund ${rs(x.r.refund)}</em></div>`).join("")}</div><p class="note2">${E(notes)}</p><div class="cxs"><span>TOTAL REFUND</span><b>${rs(tot)}</b></div><div class="mb"><button type="button" class="btn ghost2" data-close>Keep Ticket</button><button type="button" class="btn red" id="cxok">Yes, Cancel</button></div>`);
- d.querySelector("#cxok").onclick=()=>{applyCancel(X.pnr,idx);d.remove();POP(`<div class="cxdone">✓</div><h3>Ticket cancelled</h3><p>Refund of <b>${rs(tot)}</b> will be credited in 5-7 working days (simulation). The cancelled ticket now appears on the Cancel page.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`)}}
+ const d=POP(`<h3>Cancel ${rows.length>1?rows.length+" tickets":"ticket"}?</h3><p class="sm">${E(X.an)} → ${E(X.bn)} · ${E(X.dd)}</p><div class="cxt">${rows.map(x=>`<div class="cxr"><b>${E(x.p.name)}</b><span>PNR ${E(x.p.pnr)} · Fare ${rs(x.r.fare)} · Charge ${rs(x.r.charge)}</span><em>Refund ${rs(x.r.refund)}</em></div>`).join("")}</div><p class="note2">${E(notes)}</p><div class="cxs"><span>TOTAL REFUND</span><b>${rs(tot)}</b></div><div class="mb"><button type="button" class="btn ghost2" data-close>Keep Ticket</button><button type="button" class="btn red" id="cxok">Yes, Cancel</button></div>`);
+ d.querySelector("#cxok").onclick=()=>{applyCancel(X.bid,idx);d.remove();POP(`<div class="cxdone">✓</div><h3>Ticket cancelled</h3><p>Refund of <b>${rs(tot)}</b> will be credited in 5-7 working days (simulation). The cancelled ticket now appears on the Cancel page.</p><div class="mb"><button type="button" class="btn blue" data-close>OK</button></div>`)}}
 /* ---------- rendering ---------- */
-const bannerHTML=X=>{const n=X.pax.length,cx=X.pax.filter(p=>p.cx).length,act=X.pax.filter(p=>!p.cx),wl=act.filter(p=>!p.ok).length,ref=X.pax.reduce((s,p)=>s+(p.cx?p.cx.refund:0),0);
- if(cx==n)return `<div class="okb cxb"><div class="tick">✕</div><div class="oi"><b>Ticket Cancelled</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${n} passenger${n>1?"s":""} · refund will be credited in 5-7 working days (simulation)</span></div><div class="tot"><small>TOTAL REFUND</small><b>${rs(ref)}</b></div></div>`;
+const pnrText=ps=>ps.length<=3?ps.join(", "):ps.slice(0,2).join(", ")+" +"+(ps.length-2)+" more";
+const bannerHTML=X=>{const n=X.pax.length,cx=X.pax.filter(p=>p.cx).length,act=X.pax.filter(p=>!p.cx),wl=act.filter(p=>!p.ok).length,ref=X.pax.reduce((s,p)=>s+(p.cx?p.cx.refund:0),0),ps=(cx==n?X.pax:act).map(p=>p.pnr),lb="PNR NUMBER"+(ps.length>1?"S":"");
+ if(cx==n)return `<div class="okb cxb"><div class="tick">✕</div><div class="oi"><b>Ticket Cancelled</b><span>${lb} <strong>${E(pnrText(ps))}</strong> · ${n} ticket${n>1?"s":""} · refund will be credited in 5-7 working days (simulation)</span></div><div class="tot"><small>TOTAL REFUND</small><b>${rs(ref)}</b></div></div>`;
  const t=wl==0?"Ticket Booked Successfully!":wl==act.length?"Ticket Booked - Waiting List":"Ticket Booked - "+(act.length-wl)+" Confirmed, "+wl+" Waiting";
- return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==act.length?"!":"✓"}</div><div class="oi"><b>${t}</b><span>PNR NUMBER <strong>${E(X.pnr)}</strong> · ${act.length} passenger${act.length>1?"s":""} · ${E(X.q)}${cx?" · "+cx+" cancelled (refund "+rs(ref)+")":""}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(act.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
-const tkHTML=X=>X.pax.map((p,i)=>{const oi=p._i??i;return`<article class="tk2 ${p.cx?"cxl":p.ok?"cnf":"wl"} ${X.q=="Tatkal"?"tkt":"tkg"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small><span class="qt">${X.q=="Tatkal"?"⚡ TATKAL":"GENERAL"}</span></div><div class="pnrb" data-copy="${E(X.pnr)}" title="Tap to copy PNR"><small>PNR NUMBER</small><b>${E(X.pnr)}</b></div></div>
+ return `<div class="okb${wl?" wlb":""}"><div class="tick">${wl==act.length?"!":"✓"}</div><div class="oi"><b>${t}</b><span>${lb} <strong>${E(pnrText(ps))}</strong> · ${act.length} ticket${act.length>1?"s":""} · ${E(X.q)}${cx?" · "+cx+" cancelled (refund "+rs(ref)+")":""}</span></div><div class="tot"><small>TOTAL FARE</small><b>${rs(act.reduce((s,p)=>s+(p.fare??X.fr),0))}</b></div></div>`};
+const tkHTML=X=>X.pax.map((p,i)=>{const oi=p._i??i;return`<article class="tk2 ${p.cx?"cxl":p.ok?"cnf":"wl"} ${X.q=="Tatkal"?"tkt":"tkg"}"><div class="tk2h"><div class="brand"><b>🚆 Railway Ticket Booking</b><small>E-TICKET · SIMULATION</small><span class="qt">${X.q=="Tatkal"?"⚡ TATKAL":"GENERAL"}</span></div><div class="pnrb" data-copy="${E(p.pnr)}" title="Tap to copy PNR"><small>PNR NUMBER</small><b>${E(p.pnr)}</b></div></div>
 <div class="tk2b"><div class="tk2l"><div class="tkid">TICKET ID ${E(p.tid)}</div><div class="trn"><b>${E(X.tn)}</b><span>#${E(X.tno)} · ${E(X.ty)}</span></div>
 <div class="rtx"><div><strong>${E(X.a)}</strong><span>${E(X.an)}</span><small>DEPARTS</small><em>${apm(X.dep)}</em><span>${E(X.dd)}</span></div><div class="mid"><i></i><span>${E(X.dist)} km</span><span>⏱ ${E(X.dur)}</span></div><div class="r"><strong>${E(X.b)}</strong><span>${E(X.bn)}</span><small>ARRIVES</small><em>${apm(X.arr)}</em><span>${E(X.ad)}</span></div></div>
 <div class="dg2"><div><span class="lab">PASSENGER</span><b>${E(p.name)}</b></div><div><span class="lab">AGE / GENDER</span><b>${E(p.age)} / ${E(p.g)}</b></div><div><span class="lab">CLASS</span><b>${E(X.cn)} (${E(X.k)})</b></div><div><span class="lab">QUOTA</span><b>${E(X.q)}</b></div>
 <div><span class="lab">SEAT NO.</span><b>${E(p.seat)}</b></div><div><span class="lab">BERTH / SEAT TYPE</span><b>${E(p.bt)}</b></div><div><span class="lab">JOURNEY DATE</span><b>${E(X.dd)}</b></div><div><span class="lab">TICKET TYPE</span><b>${p.half?"Half Ticket (Child)":"Full Ticket"}</b></div></div></div>
-<div class="tk2r"><div class="stamp">${p.cx?"CANCELLED":E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(X.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div>${p.cx?`<div class="cxd">Refund ${rs(p.cx.refund)}<small>Charge ${rs(p.cx.charge)}</small></div>`:`<a class="cxbtn" href="cancel.html#p=${E(X.pnr)}&amp;i=${oi}" data-go="cancel" data-p="${E(X.pnr)}" data-i="${oi}">✕ Cancel Ticket</a>`}</div></div>
+<div class="tk2r"><div class="stamp">${p.cx?"CANCELLED":E(p.lab)}</div>${p.half?`<span class="half">HALF TICKET</span>`:""}<div><span class="lab">FARE</span><div class="price">${rs(p.fare??X.fr)}</div></div><div class="qrw">${qr(p.pnr+p.tid)}</div><div class="bar">${bars(p.tid)}</div>${p.cx?`<div class="cxd">Refund ${rs(p.cx.refund)}<small>Charge ${rs(p.cx.charge)}</small></div>`:`<a class="cxbtn" href="cancel.html#p=${E(p.pnr)}" data-go="cancel" data-p="${E(p.pnr)}">✕ Cancel Ticket</a>`}</div></div>
 <div class="tk2f">Simulation ticket · for learning purposes only · Have a safe journey 🚂</div></article>`}).join("");
 const confetti=()=>{if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const C=["#ffc72c","#7c5cff","#3b4ef0","#2fe39a","#ff6a5c","#ffffff"];for(let i=0;i<70;i++){const e=document.createElement("i");e.className="cf";e.style.left=Math.random()*100+"vw";e.style.background=C[i%6];e.style.setProperty("--dx",(Math.random()*200-100)+"px");e.style.animationDelay=Math.random()*.5+"s";e.style.animationDuration=(1.8+Math.random()*1.4)+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),4300)}};
 const TOAST=m=>{const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1900)};
@@ -697,22 +740,21 @@ if(f){
   <div class="err" id="err2" role="alert"></div><button type="button" class="btn blue" id="conf">Book Ticket</button></div>`);
   if($("pall"))$("pall").onchange=e=>{if(e.target.value)document.querySelectorAll(".pb").forEach(s=>s.value=e.target.value)};
   document.querySelector(".bkp").scrollIntoView({behavior:"smooth",block:"center"});$("conf").onclick=book};
- const renderBooked=X=>{$("tickets").dataset.pnr=X.pnr;$("tickets").innerHTML=bannerHTML(X)+`<div class="dlbar"><a class="btn" href="download.html" data-go="download">🎟 View &amp; Download Ticket</a></div><span class="hint">Your ticket is saved on the Download page. Cancelled tickets are shown on the Cancel page.</span>`};
+ const renderBooked=X=>{$("tickets").dataset.pnr=X.bid;$("tickets").innerHTML=bannerHTML(X)+`<div class="dlbar"><a class="btn" href="download.html" data-go="download">🎟 View &amp; Download Ticket</a></div><span class="hint">Your ticket is saved on the Download page. Cancelled tickets are shown on the Cancel page.</span>`};
  function book(){const m0=need();if(m0){$("err2").textContent=m0;return f.scrollIntoView({behavior:"smooth"})}
   const nm=[...document.querySelectorAll(".pn")],ag=[...document.querySelectorAll(".pa")],gn=[...document.querySelectorAll(".pg")],pb=[...document.querySelectorAll(".pb")],{t,k,fr,st}=S;
-  const always=Q.q=="Tatkal"||(st.k=="AVL"&&!(k=="SL"||k=="2S"));let cn=1+Math.floor(Math.random()*4),used=new Set();
+  const taken=allPnrs();const always=Q.q=="Tatkal"||(st.k=="AVL"&&!(k=="SL"||k=="2S"));let cn=1+Math.floor(Math.random()*4),used=new Set();
   const pax=nm.map((x,i)=>{let ok=true,w=0;if(always)ok=true;else if(st.k=="AVL"){ok=i<st.n;w=i-st.n+1}else{ok=false;w=st.n+i}
    let seatT="Not allotted",bt="-";if(ok){if(used.size>=CL[k].z){cn++;used=new Set()}const[n,bb]=seat(k,pb[i].value,used);seatT=CL[k].p+cn+"-"+String(n).padStart(2,"0");bt=bb}
-   return{name:x.value.trim(),age:ag[i].value,half:+ag[i].value<10,fare:+ag[i].value<10?Math.round(fr/2):fr,g:gn[i].value,ok,lab:ok?"CONFIRMED":"WAITLIST "+w,seat:seatT,bt,tid:"TKT"+Math.floor(1e7+Math.random()*9e7)}});
-  const X={pnr:String(Math.floor(1e9+Math.random()*9e9)),tn:t.name,tno:t.no,ty:TY[t.ty].l,a:Q.a,b:Q.b,an:ST[Q.a].n,bn:ST[Q.b].n,dist:t.dist,dep:fm(t.dep),arr:fm(t.arr),dd:dtf(Q.dt),ad:dtf(Q.dt,Math.floor(t.arr/1440)),dur:dur(t.arr-t.dep),k,cn:CL[k].n,q:Q.q,fr,pax,iso:Q.dt,dm:t.dep};
+   return{pnr:newPnr(taken),name:x.value.trim(),age:ag[i].value,half:+ag[i].value<10,fare:+ag[i].value<10?Math.round(fr/2):fr,g:gn[i].value,ok,lab:ok?"CONFIRMED":"WAITLIST "+w,seat:seatT,bt,tid:"TKT"+Math.floor(1e7+Math.random()*9e7)}});
+  const X={bid:newPnr(taken),tn:t.name,tno:t.no,ty:TY[t.ty].l,a:Q.a,b:Q.b,an:ST[Q.a].n,bn:ST[Q.b].n,dist:t.dist,dep:fm(t.dep),arr:fm(t.arr),dd:dtf(Q.dt),ad:dtf(Q.dt,Math.floor(t.arr/1440)),dur:dur(t.arr-t.dep),k,cn:CL[k].n,q:Q.q,fr,pax,iso:Q.dt,dm:t.dep};
   saveBk(X);
   renderBooked(X);stp(4);if(pax.some(p=>p.ok))confetti();$("tickets").scrollIntoView({behavior:"smooth"})}
 }
  
 document.querySelectorAll(".back").forEach(b=>{b.onclick=()=>{history.length>1?history.back():location.href="index.html"};if(history.length<2&&b.dataset.home)b.style.display="none"});
-if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".card,.step,.stat,.band,.cta,.rc,.board,.hc:not(.imp)").forEach(x=>{x.classList.add("rv");io.observe(x)})}
 document.querySelectorAll("[data-count]").forEach(el=>{const n=+el.dataset.count,sf=el.dataset.suf||"",run=()=>{let t0=null;const st=ts=>{t0=t0||ts;const p=Math.min(1,(ts-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+sf;if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)};if("IntersectionObserver"in window){el.textContent="0"+sf;const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){run();o.disconnect()}});o.observe(el)}});
-(()=>{const sp=document.createElement("div");sp.id="sp";document.body.appendChild(sp);const u=()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;sp.style.width=(m>0?h.scrollTop/m*100:0)+"%"};addEventListener("scroll",u,{passive:true});u();const hero=document.querySelector(".hero");if(hero&&matchMedia("(hover:hover)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")})})();
+(()=>{const sp=document.createElement("div");sp.id="sp";document.body.appendChild(sp);const u=()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;sp.style.transform="scaleX("+(m>0?Math.min(1,h.scrollTop/m):0)+")"};addEventListener("scroll",u,{passive:true});u();const hero=document.querySelector(".hero");if(hero&&matchMedia("(hover:hover)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")})})();
 (()=>{const h=document.querySelector("header");if(!h)return;const set=()=>document.documentElement.style.setProperty("--hh",h.getBoundingClientRect().height+"px");set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(h);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
  
 </script></body></html>

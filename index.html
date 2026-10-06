@@ -534,6 +534,45 @@ a.cxbtn{display:inline-block;text-align:center;text-decoration:none}
 .cxsum{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:#fff4f3;border:1px solid #f3b6b0;border-radius:16px;padding:12px 16px;margin-top:8px;color:#7a1d14}
 .cxsum em{margin-left:auto;font-style:normal;font-weight:800;color:#c0291d}
 @media print{.backbar{display:none!important}}
+.cxrow.one{grid-template-columns:1fr auto;cursor:default}
+/* v14: stable on every phone */
+html{overflow-x:visible}
+body{overflow-x:clip;background:linear-gradient(180deg,#f3f5ff,#e9eeff)}
+body:before{display:none}
+header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#0d1540}
+.back,.hstats,.mdl{-webkit-backdrop-filter:none;backdrop-filter:none}
+.mdl{background:rgba(11,18,56,.72)}
+#sp{width:100%;transform-origin:0 50%;transform:scaleX(0);transition:none}
+.rv{opacity:1!important;transform:none!important;transition:none!important}
+.card,.stat,.step,.hc,.tr,.tk2,.rc{animation:up .5s ease-out backwards}
+img,svg,video,canvas{max-width:100%}
+.wrap,.panel,.hc,.card,.tk2,.tr,.okb,.cxcard,.dlhead{min-width:0;max-width:100%}
+.hc p,.hc li,.hc h2,.hc b,.tk2 b,.tk2 span,.okb span{overflow-wrap:anywhere}
+/* Help / About grid can never grow wider than the screen */
+.hg{grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.hg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.hc{--ac:#3b4ef0;--ac2:#7c5cff;--tint:#f5f6ff;--hd:#2a35c8;--bd:#d9defc}
+.hc:nth-child(6n+2){--ac:#f59e0b;--ac2:#ffc933;--tint:#fffaf0;--hd:#8a5a00;--bd:#f6e2b5}
+.hc:nth-child(6n+3){--ac:#0ea371;--ac2:#34d399;--tint:#f2fbf7;--hd:#0b6b4b;--bd:#c9eedd}
+.hc:nth-child(6n+4){--ac:#e0457b;--ac2:#ff86ae;--tint:#fff4f8;--hd:#9c1f4e;--bd:#f7cddc}
+.hc:nth-child(6n+5){--ac:#0891b2;--ac2:#4fd1ff;--tint:#f1fbfe;--hd:#066079;--bd:#c4eaf4}
+.hc:nth-child(6n){--ac:#8b5cf6;--ac2:#c084fc;--tint:#f8f5ff;--hd:#5b34b5;--bd:#e0d4fb}
+.hc:nth-child(n){background:linear-gradient(#fff,var(--tint));border:1px solid var(--bd);border-top:5px solid var(--ac)}
+.hc:nth-child(n) h2{color:var(--hd)}
+.hc:nth-child(n) .no{background:linear-gradient(135deg,var(--ac2),var(--ac));color:#fff;box-shadow:0 8px 16px rgba(11,18,56,.16)}
+.hc.warn:nth-child(n){--ac:#e08a00;background:#fffaf0;border-color:#f0d8a8;border-top:5px solid #e08a00}
+.hc.imp:nth-child(n){background:#fff4f3;border:2px solid #e4392b;border-top:7px solid #e4392b}
+.hc.imp:nth-child(n) h2{color:#c0291d}
+@media(hover:hover){.hc:hover{box-shadow:0 18px 40px rgba(59,78,240,.18)}}
+@media(hover:none),(max-width:820px){.btn:after,.tk2h:before{display:none}.hero h1 b{animation:none}}
+@media(max-width:380px){.wrap{padding:0 4vw}.panel{padding:18px}.hc{padding:18px}.hh{gap:10px}.no{flex-basis:38px;width:38px;height:38px;font-size:1rem}}
+@media(max-width:340px){.tk2l,.tk2r{padding:16px 14px}.rtx strong{font-size:1.4rem}.dg2{gap:10px}}
+/* short pages: footer always sits at the bottom of the screen, never in the middle */
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body>.wrap{margin-top:0;margin-bottom:0}
+body>footer{margin-top:auto}
+body>main.view.on{flex:1 0 auto}
+body>header,body>.backbar,body>.pagehead,body>.hero{flex:0 0 auto}
 </style><meta name="theme-color" content="#0f1b3d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E"><title>Railway Ticket Booking Simulation</title></head><body>
 <header><div class="wrap"><a class="logo" href="index.html">Railway Ticket Booking🚂</a><nav><a href="index.html" class="on">Home</a><a href="booking.html">Book Ticket</a><a href="download.html">Download</a><a href="cancel.html">Cancel</a><a href="about.html">About</a><a href="help.html">Help</a></nav></div></header><div class="backbar"><div class="wrap"><button type="button" class="back" data-home=1>← Back</button></div></div><div class="hero"><svg class="sky" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true"><path fill="#ffffff0a" d="M0 150V70l80-26 70 34 90-52 80 40 100-60 90 56 80-30 110 44 90-48 120 56 100-34 110 40 90-30 130 36V150z"/><path fill="#ffffff12" d="M0 150V104l70-14 90 22 80-26 110 24 90-30 100 28 90-20 110 26 80-24 120 24 90-18 110 22 100-16 100 18V150z"/></svg><span class="cloud k1"></span><span class="cloud k2"></span><div class="wrap">
 <div class="hl"><p class="tag">SMART RAILWAY BOOKING</p><h1>Make Every <b>Journey Simple.</b></h1>
@@ -581,10 +620,8 @@ a.cxbtn{display:inline-block;text-align:center;text-decoration:none}
 if(r){try{sessionStorage.removeItem("rtb_all")}catch(e){}try{localStorage.removeItem("rtb_all");localStorage.removeItem("rtb_last")}catch(e){}try{if(String(window.name).startsWith("RTB1:"))window.name=""}catch(e){}}})();
  
 document.querySelectorAll(".back").forEach(b=>{b.onclick=()=>{history.length>1?history.back():location.href="index.html"};if(history.length<2&&b.dataset.home)b.style.display="none"});
-if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll(".card,.step,.stat,.band,.cta,.rc,.board,.hc:not(.imp)").forEach(x=>{x.classList.add("rv");io.observe(x)})}
 document.querySelectorAll("[data-count]").forEach(el=>{const n=+el.dataset.count,sf=el.dataset.suf||"",run=()=>{let t0=null;const st=ts=>{t0=t0||ts;const p=Math.min(1,(ts-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+sf;if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)};if("IntersectionObserver"in window){el.textContent="0"+sf;const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){run();o.disconnect()}});o.observe(el)}});
-(()=>{const sp=document.createElement("div");sp.id="sp";document.body.appendChild(sp);const u=()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;sp.style.width=(m>0?h.scrollTop/m*100:0)+"%"};addEventListener("scroll",u,{passive:true});u();const hero=document.querySelector(".hero");if(hero&&matchMedia("(hover:hover)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")})})();
+(()=>{const sp=document.createElement("div");sp.id="sp";document.body.appendChild(sp);const u=()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;sp.style.transform="scaleX("+(m>0?Math.min(1,h.scrollTop/m):0)+")"};addEventListener("scroll",u,{passive:true});u();const hero=document.querySelector(".hero");if(hero&&matchMedia("(hover:hover)").matches)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")})})();
 (()=>{const h=document.querySelector("header");if(!h)return;const set=()=>document.documentElement.style.setProperty("--hh",h.getBoundingClientRect().height+"px");set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(h);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(set)})();
  
 </script></body></html>
- 
